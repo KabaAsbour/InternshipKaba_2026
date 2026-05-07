@@ -5,464 +5,851 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rapport de Stage CBG 2026 - Kaba Mohamed Asbour Diakité</title>
     <style>
-        /* Microsoft-style layout */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #fff;
-            line-height: 1.5;
-        }
-
-        .container {
-            display: flex;
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        .sidebar {
-            width: 280px;
-            flex-shrink: 0;
-            border-right: 1px solid #e1e4e8;
-            padding-right: 1.5rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        .main-content {
-            flex: 1;
-            min-width: 0;
-            padding: 0 1rem;
-        }
-
-        .right-toc {
-            width: 240px;
-            flex-shrink: 0;
-            border-left: 1px solid #e1e4e8;
-            padding-left: 1.5rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        .sidebar summary, .right-toc summary {
-            cursor: pointer;
-            font-weight: 600;
-            padding: 0.5rem 0;
-            color: #24292e;
-        }
-
-        .sidebar details, .right-toc details {
-            margin-bottom: 0.5rem;
-        }
-
-        .sidebar a, .right-toc a {
-            text-decoration: none;
-            color: #0366d6;
-            display: block;
-            padding: 0.25rem 0 0.25rem 1rem;
-            font-size: 0.875rem;
-        }
-
-        .sidebar a:hover, .right-toc a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-
-        h1, h2, h3, h4 {
-            scroll-margin-top: 1rem;
-        }
-
-        h1 {
-            border-bottom: 2px solid #e1e4e8;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            border-bottom: 1px solid #e1e4e8;
-            padding-bottom: 0.3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .confidential-box {
-            background-color: #fff8e7;
-            border-left: 4px solid #ffa500;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-style: italic;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        video {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 1rem 0;
-        }
-
-        th, td {
-            border: 1px solid #e1e4e8;
-            padding: 0.5rem;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f6f8fa;
-        }
-
-        @media (max-width: 900px) {
-            .sidebar, .right-toc {
-                display: none;
-            }
-            .container {
-                padding: 0.5rem;
-            }
-            .main-content {
-                width: 100%;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #fff; line-height: 1.5; }
+        .container { display: flex; gap: 2rem; max-width: 1400px; margin: 0 auto; padding: 1rem; }
+        .sidebar { width: 280px; flex-shrink: 0; border-right: 1px solid #e1e4e8; padding-right: 1.5rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+        .main-content { flex: 1; min-width: 0; padding: 0 1rem; }
+        .right-toc { width: 240px; flex-shrink: 0; border-left: 1px solid #e1e4e8; padding-left: 1.5rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+        .sidebar a, .right-toc a { text-decoration: none; color: #0366d6; display: block; padding: 0.25rem 0 0.25rem 1rem; font-size: 0.875rem; }
+        .sidebar a:hover, .right-toc a:hover { color: #0056b3; text-decoration: underline; }
+        h1, h2, h3 { scroll-margin-top: 1rem; }
+        h1 { border-bottom: 2px solid #e1e4e8; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+        h2 { border-bottom: 1px solid #e1e4e8; padding-bottom: 0.3rem; margin-top: 1.5rem; margin-bottom: 1rem; }
+        .confidential-box { background-color: #fff8e7; border-left: 4px solid #ffa500; padding: 1rem; margin: 1rem 0; font-style: italic; }
+        img, video { max-width: 100%; height: auto; }
+        table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+        th, td { border: 1px solid #e1e4e8; padding: 0.5rem; text-align: left; }
+        @media (max-width: 900px) { .sidebar, .right-toc { display: none; } }
     </style>
 </head>
 <body>
-
 <div class="container">
-
-<!-- ==================== LEFT SIDEBAR MENU ==================== -->
 <div class="sidebar">
-
 <h3>📋 RAPPORT DE STAGE 2026</h3>
 <p><strong>Kaba Mohamed Asbour Diakité</strong></p>
 <hr>
-
-<details open>
-<summary><strong>🏠 INTRODUCTION</strong></summary>
+<details open><summary><strong>🏠 INTRODUCTION</strong></summary>
 <a href="#confidentialite">🔒 Avis de Confidentialité</a>
 <a href="#couverture">📄 Couverture</a>
 <a href="#table-des-matieres">📑 Table des Matières</a>
 <a href="#introduction-generale">Introduction Générale</a>
 </details>
-
-<details>
-<summary><strong>🙏 REMERCIEMENTS & OBJECTIFS</strong></summary>
+<details><summary><strong>🙏 REMERCIEMENTS & OBJECTIFS</strong></summary>
 <a href="#remerciements">🙏 Remerciements</a>
 <a href="#objectifs-strategiques-du-stage">🎯 Objectifs stratégiques</a>
 <a href="#vision-dintegration-et-projection-professionnelle">👁️ Vision professionnelle</a>
 </details>
-
-<details>
-<summary><strong>🏢 PRÉSENTATION CBG</strong></summary>
+<details><summary><strong>🏢 PRÉSENTATION CBG</strong></summary>
 <a href="#presentation-de-lentreprise">Aperçu général</a>
 <a href="#5-description-du-departement-informatique-d4402">Département IT D4402</a>
 </details>
-
-<details>
-<summary><strong>📊 SEMAINE 1 - INDUCTION</strong></summary>
+<details><summary><strong>📊 SEMAINE 1 - INDUCTION</strong></summary>
 <a href="#51-induction-et-sensibilisation-institutionnelle">Induction</a>
 <a href="#52-premiere-immersion-dans-les-departements-techniques--12022026">Première immersion</a>
 <a href="#55-immersion-au-departement-sap--13022026">Immersion SAP</a>
 <a href="#7-difficultes-rencontrees">Difficultés</a>
 </details>
-
-<details>
-<summary><strong>🟢 SEMAINE 2 - SAP & FICHES DE PAIE</strong></summary>
+<details><summary><strong>🟢 SEMAINE 2 - SAP & FICHES DE PAIE</strong></summary>
 <a href="#571-approfondissement-des-transactions-sap--16022026">Transactions SAP</a>
 <a href="#572-assistance-utilisateur--transaction-migo">Assistance MIGO</a>
 <a href="#573-mise-en-place-dun-serveur-apache--projet-fiches-de-paie">Serveur Apache</a>
 <a href="#575-choix-du-module-sap--orientation-vers-mm">Module MM</a>
 </details>
-
-<details>
-<summary><strong>⚙️ SEMAINES 3 À 5</strong></summary>
+<details><summary><strong>⚙️ SEMAINES 3 À 5</strong></summary>
 <a href="#581-reunion-hebdomadaire-et-management-operationnel--23022026">Management Outils</a>
 <a href="#591-developpement-dun-tableau-de-bord-power-bi--02032026">Power BI</a>
 <a href="#5101-reunion-hebdomadaire-et-suivi-des-projets--09032026">Admin & Accès</a>
 </details>
-
-<details>
-<summary><strong>🚀 SEMAINES 6 À 12</strong></summary>
+<details><summary><strong>🚀 SEMAINES 6 À 12</strong></summary>
 <a href="#5113-lancement-du-projet-power-apps-laissez-passer--18032026">Power Apps</a>
 <a href="#513-huitieme-semaine--integration-des-workflows-et-optimisation-des-outils">Finalisation</a>
 <a href="#517-douzieme-semaine--bilan-final-et-cloture-du-stage">Bilan final</a>
 </details>
-
-<details>
-<summary><strong>📎 ANNEXES & CONCLUSION</strong></summary>
+<details><summary><strong>📎 ANNEXES & CONCLUSION</strong></summary>
 <a href="#8-competences-techniques-acquises">Compétences</a>
 <a href="#conclusion-generale">Conclusion</a>
 <a href="#annexes-1">Annexes</a>
 </details>
-
 </div>
-
-<!-- ==================== MAIN CONTENT AREA ==================== -->
 <div class="main-content">
-
 <h1>RAPPORT DE STAGE DE KABA MOHAMED ASBOUR DIAKITÉ - 2026</h1>
-
-<div id="confidentialite" class="confidential-box">
-<strong>🔒 AVIS DE CONFIDENTIALITÉ</strong><br>
+<div align="center" id="confidentialite">
+<blockquote>
+<p><strong>🔒 AVIS DE CONFIDENTIALITÉ</strong><br>
 <em>Ce document contient des informations relatives à mon stage au sein de la <strong>COMPAGNIE DES BAUXITES DE GUINEE (CBG)</strong>.</em><br>
 <em>Il est destiné uniquement à des fins d'évaluation académique.</em><br>
 <em>Merci de ne pas le diffuser sans autorisation préalable.</em><br>
-📞 Tel: (+224) 626-73-26-82 / 611-57-12-58<br>
-📧 asbourkaba3657diakite@gmail.com<br>
-📧 asbourmohamed3657@outlook.fr
+Merci de contacter: Tel:(+224) 626-73-26-82 / 611-57-12-58.<br>
+asbourkaba3657diakite@gmail.com<br>
+asbourmohamed3657@outlook.fr</p>
+</blockquote>
 </div>
-
 <div id="couverture">
 <h2>COVER PAGE - PAGE DE GARDE</h2>
-<img src="coverpage.png" alt="Page de garde" style="max-width: 100%; border: 1px solid #ddd;">
+<p><img src="coverpage.png" alt="alt text"></p>
 </div>
-
 <div id="table-des-matieres">
 <h2>TABLE OF CONTENT / TABLE DES MATIÈRES</h2>
+<details><summary><strong>Introduction Générale</strong></summary>
+<p>Brève présentation du stage, objectifs et contexte.</p>
+</details>
+<details><summary><strong>2. Remerciements</strong></summary>
+<p>Remerciez l'entreprise, superviseur et établissement scolaire.</p>
+</details>
+<details><summary><strong>3. Résumé Exécutif</strong></summary>
+<p>Brève présentation de l'objectif, des missions, des compétences clés et des résultats obtenus.</p>
+</details>
+<details><summary><strong>4. Présentation de l'Entreprise</strong></summary>
 <ul>
-<li><a href="#introduction-generale">Introduction Générale</a></li>
-<li><a href="#remerciements">2. Remerciements</a></li>
-<li><a href="#presentation-de-lentreprise">4. Présentation de l'Entreprise</a></li>
-<li><a href="#51-induction-et-sensibilisation-institutionnelle">7.1 Semaine 1 - Induction</a></li>
-<li><a href="#571-approfondissement-des-transactions-sap--16022026">7.2 Semaine 2 - SAP</a></li>
-<li><a href="#8-competences-techniques-acquises">8. Compétences Techniques Acquises</a></li>
-<li><a href="#conclusion-generale">12. Conclusion Générale</a></li>
-<li><a href="#annexes-1">13. Annexes</a></li>
+<li>Aperçu général de la CBG</li>
+<li>Secteur d'activité</li>
+<li>Rôle du département informatique</li>
+<li>Structure organisationnelle</li>
 </ul>
+</details>
+<details><summary><strong>5. Description du Département Informatique D4402</strong></summary>
+<ul>
+<li>Objectifs du département</li>
+<li>Infrastructure informatique</li>
+<li>Responsabilités principales</li>
+</ul>
+</details>
+<details><summary><strong>6. Objectifs du Stage</strong></summary>
+<ul>
+<li>Objectifs professionnels</li>
+<li>Vision d'intégration</li>
+</ul>
+</details>
+<details><summary><strong>7. Activités Réalisées</strong></summary>
+<ul>
+<li>Semaine 1 : Induction</li>
+<li>Semaine 2 : SAP &amp; Fiches de paie</li>
+<li>Semaines 3 à 12 : Développement technique</li>
+</ul>
+</details>
+<details><summary><strong>8. Compétences Techniques Acquises</strong></summary>
+<p>SAP, Power BI, Power Apps, AS400, etc.</p>
+</details>
+<details><summary><strong>9. Difficultés Rencontrées</strong></summary>
+<p>Problèmes techniques, organisation, délais.</p>
+</details>
+<details><summary><strong>10. Contribution à l'Entreprise</strong></summary>
+<p>Amélioration des processus, documentation, automatisation.</p>
+</details>
+<details><summary><strong>11. Développement Personnel et Professionnel</strong></summary>
+<p>Travail en équipe, rigueur, adaptabilité.</p>
+</details>
+<details><summary><strong>12. Conclusion Générale</strong></summary>
+<p>Bilan global et impact sur le parcours professionnel.</p>
+</details>
+<details><summary><strong>13. Annexes</strong></summary>
+<p>Captures d'écran, documents, ressources.</p>
+</details>
 </div>
-
 <div id="introduction-generale">
 <h2>INTRODUCTION</h2>
-<p>Ce stage s'inscrit dans le cadre de ma formation académique et représente une étape essentielle dans mon parcours professionnel. Il a été effectué au sein de la <strong>Compagnie des Bauxites de Guinée (CBG)</strong>, plus précisément dans le département D4402 Informatique.</p>
+<p>Ce stage s'inscrit dans le cadre de ma formation académique et représente une étape essentielle dans mon parcours professionnel. Il a été effectué au sein de la <strong>Compagnie des Bauxites de Guinée (CBG)</strong> , plus précisément dans le département D4402 Informatique.</p>
 <p>L'objectif principal de cette immersion était de découvrir le fonctionnement d'un environnement industriel complexe, d'acquérir des compétences techniques concrètes et de participer activement aux activités du département informatique.</p>
-<p>Au cours de cette expérience, j'ai été impliqué dans plusieurs domaines clés tels que : les systèmes ERP (SAP), l'analyse et la gestion des données, le support technique, le développement d'applications (Power Apps, Django), et l'automatisation des processus (Power Automate).</p>
-<video src="./INTERNSHIPSource/INTERNSHIP%20FILE/NEW%20ARRIVAL/video.mp4" controls autoplay muted loop width="100%"></video>
+<p>Au cours de cette expérience, j'ai été impliqué dans plusieurs domaines clés tels que :</p>
+<ul>
+<li>les systèmes ERP (SAP),</li>
+<li>l'analyse et la gestion des données,</li>
+<li>le support technique,</li>
+<li>le développement d'applications (Power Apps, Django),</li>
+<li>et l'automatisation des processus (Power Automate).</li>
+</ul>
+<p>Ce stage m'a permis de développer une compréhension globale des systèmes d'information en entreprise, tout en renforçant ma capacité d'adaptation, d'analyse et de résolution de problèmes.</p>
+<p><video src="./INTERNSHIPSource/INTERNSHIP FILE/NEW ARRIVAL/video.mp4" controls autoplay muted loop width="900"></video></p>
 </div>
-
 <div id="remerciements">
 <h2>Remerciements</h2>
-<p>Je tiens à exprimer ma profonde gratitude à la <strong>Compagnie des Bauxites de Guinée (CBG)</strong>, et à sa Direction Générale son Excellence Monsieur Karifa Condé pour m'avoir offert l'opportunité d'effectuer mon stage au sein du département D4402 Informatique. Cette expérience représente une étape déterminante dans mon parcours académique et professionnel.</p>
-<p>Je remercie particulièrement mes encadreurs professionnels, <strong>Bassoum Hamady (Surintendant Informatique), Monsieur Barry Thierno Mamoudou (Coordinateur Business Apps), Monsieur Diallo Mamadou Cellou (Analyste Senior Centre de Compétence SAP), Monsieur Sylla Hassane (Analyste Application & BI)</strong> pour leur accompagnement, leur disponibilité, leurs conseils techniques et la confiance qu'ils m'ont accordée tout au long de cette période.</p>
-<p>Mes remerciements s'adressent également à l'ensemble des collaborateurs du département pour leur accueil, leur esprit d'équipe et leur volonté de partager leurs connaissances.</p>
-<p>Enfin, je remercie mon établissement académique, <strong>Ahmadou Dieng</strong> et <strong>Business and Technology Institute (Ghana)</strong>, ainsi que mes encadreurs académiques, <strong>Monsieur Alpha Oumar Leno</strong>, <strong>Mister Koffi</strong> et <strong>Mister George (CEO)</strong> pour leur suivi pédagogique et les orientations qui ont contribué à la réussite de ce stage.</p>
+<p>Je tiens à exprimer ma profonde gratitude à la <strong>Compagnie des Bauxites de Guinée</strong>, <strong>CBG</strong>, et à sa <strong>Direction Général son Excellence Monsieur Karifa Condé</strong> pour m'avoir offert l'opportunité d'effectuer mon stage au sein du département <strong>D4402 Informatique</strong>. Cette expérience représente une étape déterminante dans mon parcours académique et professionnel.
+Je remercie particulièrement mes encadreurs professionnel,<strong>Bassoum Hamady(Surintentant Informatique)</strong>, <strong>Monsieur Barry Thierno Mamoudou  (Coordinateur Business Apps), Monsieur Diallo Mamadou Cellou  (Analyste Senior Centre de Competence SAP), Monsieur Sylla Hassane  (Analyste Application &amp; BI)</strong> pour leur accompagnement, leur disponibilité, leur conseils techniques et leur confiance qu'ils m'ont accordée tout au long de cette période. leur encadrement m'a permis de développer mes compétences techniques et d'adopter une posture professionnelle rigoureuse.
+Mes remerciements s'adressent également à l'ensemble des collaborateurs du département pour leur accueil, leur esprit d'équipe et leur volonté de partager leurs connaissances.
+Enfin, je remercie mon établissement académique, <strong>Ahmadou Dieng</strong> et <strong>Busness and Technolgy Institute (Ghana)</strong>, ainsi que mes encadreur académique respectivement, <strong>Monsieur Alpha Oumar Leno</strong> et <strong>Mister Koffi</strong> and <strong>Mister George (CEO)</strong> pour leur suivi pédagogique et les orientations qui ont contribué à la réussite de ce stage.</p>
 </div>
-
 <div id="objectifs-strategiques-du-stage">
 <h2>Objectifs stratégiques du stage</h2>
 <h3>Objectifs professionnels</h3>
 <p>Au-delà de la validation académique, ce stage représente pour moi une opportunité stratégique d'intégration progressive dans un environnement industriel exigeant.</p>
 <p>Mon objectif est de devenir rapidement opérationnel et utile au département, en apportant une contribution concrète aux activités quotidiennes tout en assimilant efficacement les processus internes, les standards techniques et la culture organisationnelle de l'entreprise.</p>
-<p>Je m'engage à : comprendre en profondeur les méthodes de travail et les flux opérationnels, développer une autonomie progressive dans l'exécution des tâches confiées, identifier les opportunités d'amélioration des processus, apporter une valeur ajoutée mesurable à travers la rigueur, la discipline et l'initiative.</p>
+<p>Je m'engage à :</p>
+<ul>
+<li>comprendre en profondeur les méthodes de travail et les flux opérationnels,</li>
+<li>développer une autonomie progressive dans l'exécution des tâches confiées,</li>
+<li>identifier les opportunités d'amélioration des processus,</li>
+<li>apporter une valeur ajoutée mesurable à travers la rigueur, la discipline et l'initiative.</li>
+</ul>
+<p>Mon ambition est de démontrer, par la performance et l'engagement, ma capacité à évoluer vers des responsabilités accrues au sein de l'organisation.</p>
 </div>
-
 <div id="vision-dintegration-et-projection-professionnelle">
 <h3>Vision d'intégration et projection professionnelle</h3>
-<p>Ce stage constitue également une phase d'évaluation mutuelle : pour l'entreprise, mesurer mon potentiel d'adaptation et de contribution ; pour moi, confirmer mon alignement avec les exigences et la culture du secteur minier.</p>
+<p>Ce stage constitue également une phase d'évaluation mutuelle :</p>
+<ul>
+<li>pour l'entreprise, mesurer mon potentiel d'adaptation et de contribution,</li>
+<li>pour moi, confirmer mon alignement avec les exigences et la culture du secteur minier.</li>
+</ul>
 <p>À travers cette immersion, je souhaite consolider mes compétences techniques, renforcer ma compréhension des enjeux industriels et m'inscrire durablement dans une trajectoire professionnelle cohérente avec les standards de performance de l'entreprise.</p>
+<p>À terme, mon objectif est de mériter une intégration professionnelle en démontrant que je peux être un acteur fiable, rigoureux et engagé dans la réalisation des objectifs stratégiques de l'organisation.</p>
 </div>
-
 <div id="presentation-de-lentreprise">
 <h2>4. Présentation de l'entreprise</h2>
 <h3>4.1 Aperçu général de la CBG</h3>
-<p>La <strong>Compagnie des Bauxites de Guinée (CBG)</strong> est un leader mondial dans l'industrie de la bauxite. Elle exploite des mines situées dans la localité de Sangarédi au nord-ouest de la République de Guinée et produit plus de 16 millions de tonnes de bauxite de qualité supérieure par an.</p>
-<p>Ses actions sont détenues à 49% par l'État guinéen et à 51% par Halco Mining, un consortium international. Depuis 1973, la CBG a contribué à plus de 5 milliards de dollars aux revenus de l'État guinéen et investi près d'un milliard de dollars dans la modernisation de ses actifs depuis 2016.</p>
+<p>La <strong>Compagnie des Bauxites de Guinée (CBG)</strong> est un leader mondial dans l'industrie de la bauxite. Elle exploite des mines situées dans la localité de Sangarédi au nord-ouest de la République de Guinée et produit plus de <strong>16 millions</strong> de tonnes de bauxite de qualité supérieure par an.</p>
+<p>Ses actions sont détenues à <strong>49%</strong> par l'<strong>État guinéen</strong> et à <strong>51%</strong> par <strong>Halco Mining</strong>, un consortium international. Depuis <strong>1973</strong>, la CBG a contribué à plus de <strong>5 milliards</strong> de dollars aux revenus de l'État guinéen et investi près d'un milliard de dollars dans la modernisation de ses actifs depuis <strong>2016</strong>.</p>
 <h3>4.2 Secteur d'activité</h3>
-<p>La CBG opère dans le secteur minier, spécialisé dans l'extraction et l'exportation de bauxite vers l'Amérique du Nord, l'Europe et la Chine.</p>
+<p>La CBG opère dans le secteur minier, spécialisé dans l'extraction et l'exportation de bauxite vers l'Amérique du Nord, l'Europe et la Chine. Elle exploite les mines de <strong>Sangarédi, Bidikoum, Silidara et N'Dangara</strong>, avec une capacité de production visant <strong>22,5 millions</strong> de tonnes en <strong>2018</strong> et <strong>40 millions</strong> à terme.</p>
+<p>L'entreprise intègre également des infrastructures logistiques (portuaires, voies ferrées) et met l'accent sur le développement communautaire, la santé-sécurité et les normes environnementales de la Société Financière Internationale (SFI).</p>
 <h3>4.3 Rôle du département informatique</h3>
-<p>Le département informatique de la CBG est un pilier central garantissant la disponibilité, la performance et la sécurité des systèmes informatiques qui soutiennent l'ensemble des activités de la société.</p>
+<p>Le département informatique de la CBG est un pilier central garantissant la disponibilité, la performance et la sécurité des systèmes informatiques qui soutiennent l'ensemble des activités de la société. Il gère les infrastructures modernes intégrant sites d'extraction, installations portuaires et services techniques/administratifs.</p>
+<p>Dans un contexte industriel complexe, il assure le support matériel, l'installation de logiciels, le dépannage et la maintenance des systèmes critiques comme <strong>SAP</strong>, <strong>Power BI</strong> et <strong>AS400</strong>, soutenant les opérations minières et logistiques.</p>
 <h3>4.4 Structure organisationnelle</h3>
-<p>La CBG dispose de trois sièges : siège social à Kamsar, siège opérationnel à Sangarédi et siège international à Wilmington, Delaware (USA). Le département informatique (D4402) intervient en appui transversal aux services techniques, administratifs et logistiques.</p>
-<p><strong>Organigramme du D4402</strong><br>
-<img src="./INTERNSHIPSource/INTERNSHIP%20FILE/drive-download-20260504T172552Z-3-001/structureof.png" alt="Structure D4402"><br>
-<img src="./IMAGES/rgtyuiç.png" alt="Organigramme"></p>
+<ul>
+<li>La CBG dispose de trois sièges : siège social à Kamsar <strong>(BP 100 Kamsar / BP 523 Conakry)</strong>, siège opérationnel à Sangarédi et siège international à Wilmington, Delaware (USA). Elle emploie plusieurs milliers de personnes avec une organisation incluant direction des opérations, secrétaire général et chefs de département.</li>
+<li>Le département informatique <strong>(D4402)</strong> intervient en appui transversal aux services techniques, administratifs et logistiques, sous la supervision d'un directeur des opérations et d'une gouvernance alignée sur des standards internationaux.</li>
+</ul>
+<p><strong>Organigramme du D4402 / Organization Structure of D4402</strong>
+<img src="/INTERNSHIPSource/INTERNSHIP%20FILE/drive-download-20260504T172552Z-3-001/structureof.png" alt="alt text">
+<img src="/IMAGES/rgtyui%C3%A7.png" alt="alt text"></p>
 </div>
-
 <div id="5-description-du-departement-informatique-d4402">
 <h2>5. Description du département informatique D4402</h2>
 <h3>5.1 Objectifs du département</h3>
-<p>Le département D4402 Informatique vise à garantir la continuité des opérations critiques en assurant la disponibilité et la sécurité des systèmes d'information.</p>
+<p>Le département D4402 Informatique vise à garantir la continuité des opérations critiques en assurant la disponibilité et la sécurité des systèmes d'information. Ses objectifs incluent l'alignement de l'IT avec les enjeux stratégiques miniers, l'optimisation des processus décisionnels et la réduction des temps d'arrêt opérationnels.</p>
 <h3>5.2 Infrastructure informatique</h3>
-<p>L'infrastructure comprend : systèmes ERP (SAP), serveurs AS400, outils analytiques (Power BI, Power Apps, SharePoint), réseaux et cybersécurité (Datto, Genetec Omnicast).</p>
+<p>L'infrastructure comprend :</p>
+<ul>
+<li><strong>Systèmes ERP</strong> : SAP (modules MM, FI/CO) pour la gestion logistique et financière ;</li>
+<li><strong>Serveurs et AS400</strong> : hébergement d'applications critiques (Oracle, SAP) ;</li>
+<li><strong>Outils analytiques</strong> : Power BI, Power Apps, SharePoint pour reporting et digitalisation ;</li>
+<li><strong>Réseaux et cybersécurité</strong> : support à distance (Datto), vidéosurveillance (Genetec Omnicast), gestion des accès.</li>
+</ul>
 <h3>5.3 Responsabilités principales</h3>
-<p>Support utilisateur, gestion des données, développement et digitalisation, administration système, sécurité et conformité.</p>
+<ul>
+<li><strong>Support utilisateur</strong> : assistance SAP (transactions MIGO, IW21, SE38), dépannage matériel/réseau ;</li>
+<li><strong>Gestion des données</strong> : extraction SAP, nettoyage Excel, modélisation Power BI ;</li>
+<li><strong>Développement et digitalisation</strong> : applications InfoPath/SharePoint, Power Apps (Laissez-Passer), serveurs Apache/PHP ;</li>
+<li><strong>Administration système</strong> : AS400/PUB400, renouvellement mots de passe SAP, inventaires applicatifs ;</li>
+<li><strong>Sécurité et conformité</strong> : gouvernance des accès, cybersurveillance, procédures standardisées.</li>
+</ul>
 </div>
-
-<!-- ==================== SEMAINE 1 ==================== -->
 <div id="51-induction-et-sensibilisation-institutionnelle">
 <h2>5.1 Première semaine d'immersion</h2>
-<h3>Induction et sensibilisation institutionnelle</h3>
+<h3>5.1 Induction et sensibilisation institutionnelle</h3>
 <p>Ma première semaine a débuté par une phase d'intégration, orientée principalement vers la culture d'entreprise, la sécurité et les engagements environnementaux de la CBG.</p>
 </div>
-
 <div id="sante-et-securite-au-travail">
 <h3>Santé et sécurité au travail</h3>
-<p>Nous avons été formés sur les principes fondamentaux de santé et sécurité, les 12 règles d'or de la CBG, et les bonnes pratiques en environnement industriel.</p>
+<p>Nous avons été formés sur :</p>
+<ul>
+<li>les principes fondamentaux de santé et sécurité,</li>
+<li>les 12 règles d'or de la CBG,</li>
+<li>les bonnes pratiques en environnement industriel.</li>
+</ul>
+<p>Cette session a permis de comprendre que la sécurité constitue une priorité stratégique au sein de l'entreprise.</p>
 </div>
-
 <div id="biodiversite-et-engagement-environnemental">
 <h3>Biodiversité et engagement environnemental</h3>
-<p>Une présentation détaillée a été faite sur l'importance de la biodiversité, le Biodiversity Action Plan de la CBG, l'engagement NNL/NG (No Net Loss/Net Gain), et les partenariats environnementaux.</p>
+<p>Une présentation détaillée a été faite sur :</p>
+<ol>
+<li>L'importance de la biodiversité</li>
+<li>Le Biodiversity Action Plan de la CBG</li>
+<li>L'engagement NNL/NG (No Net Loss / Net Gain)</li>
+<li>Les partenariats environnementaux (REB, GAC, AMR, etc.)</li>
+</ol>
+<p>Étant certifié dans le domaine du changement climatique via le programme des Nations Unies, cette partie a eu un impact particulier sur moi. Elle démontre que la CBG intègre réellement les enjeux climatiques et environnementaux dans sa stratégie opérationnelle.</p>
 </div>
-
 <div id="programme-de-sensibilisation-aux-serpents">
 <h3>Programme de sensibilisation aux serpents</h3>
-<p>Nous avons suivi une session sur les comportements à adopter face à un serpent, les procédures en cas de morsure, et les consignes de prévention en zone à risque.</p>
+<p>Nous avons également suivi une session de sensibilisation sur :</p>
+<ul>
+<li>les comportements à adopter face à un serpent,</li>
+<li>les procédures à suivre en cas de morsure,</li>
+<li>les consignes de prévention en zone à risque.</li>
+</ul>
+<p>Cela renforce la culture de prévention et d'anticipation des risques naturels.</p>
 </div>
-
 <div id="52-premiere-immersion-dans-les-departements-techniques--12022026">
 <h3>5.2 Première immersion dans les départements techniques – 12/02/2026</h3>
-<p>Lors de notre première journée opérationnelle, nous avons été répartis dans différents pôles : SAP, Maintenance, Network Management System.</p>
-<p>Nos missions consistaient à installer des ordinateurs, configurer les systèmes, et intégrer les postes au réseau interne de la CBG.</p>
+<p>Lors de notre première journée opérationnelle, nous avons été répartis dans différents pôles :</p>
+<ul>
+<li>SAP,</li>
+<li>Maintenance,</li>
+<li>Network Management System.</li>
+</ul>
+<p>Nos premières missions consistaient à :</p>
+<ul>
+<li>installer des ordinateurs,</li>
+<li>configurer les systèmes,</li>
+<li>intégrer les postes au réseau interne de la CBG.</li>
+</ul>
+<p>Lors de l'installation, nous avons accédé au <strong>BIOS</strong> afin de :</p>
+<ul>
+<li>supprimer les anciennes configurations,</li>
+<li>nettoyer les sauvegardes existantes,</li>
+<li>réinitialiser et préparer le système pour un redéploiement sécurisé.</li>
+</ul>
+<p>Cela m'a permis de renforcer mes compétences en configuration matérielle et en déploiement IT.</p>
 </div>
-
 <div id="53-organisation-infrastructurelle">
 <h3>5.3 Organisation infrastructurelle</h3>
-<p>Au bureau de Monsieur Mohamed Kaba, nous avons participé à l'organisation des câbles, la gestion des switches, et l'inventaire du matériel informatique.</p>
+<p>Au bureau de Monsieur Mohamed Kaba, nous avons participé à :</p>
+<ul>
+<li>l'organisation des câbles,</li>
+<li>la gestion des switches,</li>
+<li>l'inventaire du matériel informatique : ordinateurs et écrans.</li>
+</ul>
+<p>Monsieur Kaba nous a posé plusieurs questions techniques afin d'évaluer notre niveau :</p>
+<ul>
+<li>Qu'est-ce que l'informatique ?</li>
+<li>Quels sont les différents types de réseaux ?</li>
+<li>Comment installer et réinstaller un ordinateur ?</li>
+</ul>
+<p>Cette approche interactive permet d'identifier les compétences réelles des stagiaires.</p>
 </div>
-
 <div id="54-encadrement-professionnel">
 <h3>5.4 Encadrement professionnel</h3>
-<p>Monsieur N'Famoussa Osvaldo Camara nous a rappelé les règles de comportement professionnel : choisir le respect, prendre des notes systématiquement, et adopter une posture d'apprentissage permanent.</p>
+<p>Au bureau Maintenance et Infrastructure, Monsieur <strong>N'Famoussa Osvaldo Camara</strong> nous a rappelé les règles de comportement professionnel :</p>
+<ul>
+<li>choisir le respect en toute circonstance,</li>
+<li>prendre des notes systématiquement,</li>
+<li>adopter une posture d'apprentissage permanent.</li>
+</ul>
+<p>Il a insisté sur le fait que <strong>les personnes intelligentes prennent des notes</strong>, ce qui souligne l'importance de la rigueur et de la documentation en environnement professionnel.</p>
 </div>
-
 <div id="55-immersion-au-departement-sap--13022026">
 <h3>5.5 Immersion au département SAP – 13/02/2026</h3>
-<p>Nous avons été accueillis au bureau SAP par Monsieur Moud. J'ai appris l'usage de plusieurs transactions : LSMW, SUIM, SE16N, FBL5N.</p>
+<p>Nous avons été accueillis au bureau SAP par <strong>Monsieur Moud</strong>, qui nous a ensuite présenté son équipe. Grâce à l'accompagnement d'Abdoulaye, j'ai appris l'usage de plusieurs transactions :</p>
+<ul>
+<li><strong>LSMW</strong> : migration et gestion des données utilisateurs,</li>
+<li><strong>SUIM</strong> : consultation et extraction des utilisateurs SAP,</li>
+<li><strong>SE16N</strong> : extraction de tables (exemple: PA002),</li>
+<li><strong>FBL5N</strong> : consultation des comptes clients.</li>
+</ul>
+<p>J'ai également observé le processus suivant :</p>
+<ul>
+<li>extraction des données RH,</li>
+<li>nettoyage sous Excel,</li>
+<li>chargement dans SAP.</li>
+</ul>
+<p>Mamadou Saidou travaillait sur des rapports <strong>Power BI</strong> nécessitant un nettoyage préalable des données. Cela m'a amené à m'interroger sur l'optimisation possible via une connexion directe SAP–Power BI pour réduire la manipulation manuelle.</p>
+<p>Monsieur Cellou a recommandé la formalisation de procédures de traitement des données afin de standardiser les opérations.</p>
 </div>
-
 <div id="56-observation-critique-et-apprentissage-personnel">
 <h3>5.6 Observation critique et apprentissage personnel</h3>
-<p>Lors d'une extraction de données avec Monsieur Sylla Hassane, je n'ai pas su répondre à la question sur la transaction SE16N, ce qui m'a permis d'identifier mes axes d'amélioration.</p>
+<p>Lors d'une extraction de données avec <strong>Monsieur Sylla Hassane</strong>, je n'ai pas su répondre immédiatement à la question : <em>« Quelle transaction permet d'extraire une table ? »</em>. La réponse était <strong>SE16N</strong>.</p>
+<p>Cette situation m'a permis d'identifier mes axes d'amélioration et de renforcer ma maîtrise des transactions SAP.</p>
 </div>
-
 <div id="7-difficultes-rencontrees">
 <h2>7. Difficultés rencontrées – Semaine 1</h2>
-<p>Un problème technique a été rencontré lors de l'installation réseau au département Hydrocarbures. L'ouverture murale destinée aux câbles était insuffisante.</p>
+<p>Un problème technique a été rencontré lors de l'installation réseau au département <strong>Hydrocarbures</strong>. L'ouverture murale destinée aux câbles était insuffisante. Deux câbles étaient déjà en place et l'espace ne permettait pas l'ajout de nouveaux câbles.</p>
+<p>Cette situation met en évidence <strong>l'importance de la planification d'infrastructure physique</strong> dans les installations réseau.</p>
 </div>
-
 <div id="10-developpement-professionnel-et-personnel">
 <h2>10. Développement professionnel et personnel – Semaine 1</h2>
-<p>Cette première semaine m'a permis de comprendre l'importance de la culture sécurité, d'observer les flux de gestion des données en environnement ERP, d'identifier les opportunités d'optimisation des processus, et de développer une posture professionnelle plus rigoureuse.</p>
+<p>Cette première semaine m'a permis de :</p>
+<ol>
+<li>comprendre l'importance de la culture sécurité,</li>
+<li>observer les flux de gestion des données en environnement ERP,</li>
+<li>identifier les opportunités d'optimisation des processus,</li>
+<li>développer une posture professionnelle plus rigoureuse.</li>
+</ol>
+<p>Elle a également renforcé ma capacité d'analyse critique, notamment concernant l'intégration SAP–Power BI.</p>
 </div>
-
-<!-- ==================== SEMAINE 2 ==================== -->
 <h2>5.7 Deuxième semaine : approfondissement SAP et projet digital de fiches de paie</h2>
-
 <div id="571-approfondissement-des-transactions-sap--16022026">
 <h3>5.7.1 Approfondissement des transactions SAP – 16/02/2026</h3>
-<p>Transactions étudiées : MB51, MB24, CSKS, MSEG, MS20, SU01.</p>
+<p>Durant cette deuxième semaine, j'ai poursuivi mon immersion au sein du centre SAP avec un renforcement des connaissances transactionnelles.</p>
+<p><strong>Transactions étudiées :</strong></p>
+<ul>
+<li><strong>MB51</strong> : consultation des mouvements de stock sortants,</li>
+<li><strong>MB24</strong> : réservation de matériel en magasin,</li>
+<li><strong>CSKS</strong> : affichage des centres de coûts/départements,</li>
+<li><strong>MSEG</strong> : affichage des tables de documents matériels,</li>
+<li><strong>MS20</strong> : vérification des fréquences de connexion,</li>
+<li><strong>SU01</strong> : création et modification des autorisations utilisateurs.</li>
+</ul>
+<p>J'ai rencontré des difficultés dans la compréhension du processus de réservation (MB24). Monsieur Cellou m'a expliqué en détail le flux logique :</p>
+<ol>
+<li>Demande interne</li>
+<li>Réservation dans le système</li>
+<li>Validation</li>
+<li>Sortie de stock</li>
+</ol>
+<p>Cette clarification m'a permis de mieux comprendre la logique intégrée du module MM.</p>
 </div>
-
 <div id="572-assistance-utilisateur--transaction-migo">
 <h3>5.7.2 Assistance utilisateur : transaction MIGO</h3>
-<p>Nous avons assisté un utilisateur confronté à un problème de confirmation d'entrée de marchandises via la transaction MIGO.</p>
+<p>Nous avons assisté un utilisateur confronté à un problème de confirmation d'entrée de marchandises via la transaction MIGO. L'entrée n'ayant pas été correctement enregistrée dans SAP, nous avons identifié que la correction devait être effectuée par le service transit avant validation.</p>
+<p>Une assistance à distance via l'application Datto était prévue afin d'accompagner l'utilisateur après correction.</p>
+<p>Cette situation m'a permis de comprendre l'importance de la cohérence des flux logistiques dans SAP.</p>
 </div>
-
 <div id="573-mise-en-place-dun-serveur-apache--projet-fiches-de-paie">
 <h3>5.7.3 Mise en place d'un serveur Apache : projet fiches de paie</h3>
-<p>Nous avons participé à l'installation d'un serveur Apache pour la digitalisation des fiches de paie.</p>
+<p>Nous avons participé à l'installation d'un serveur Apache sous environnement Windows Server pour un projet stratégique : la digitalisation des fiches de paie.</p>
+<p><strong>Objectif du projet :</strong></p>
+<ul>
+<li>Permettre aux employés de recevoir leurs bulletins de salaire sur ordinateur ou téléphone,</li>
+<li>Réduire la consommation de papier,</li>
+<li>Diminuer les coûts IT liés à l'impression,</li>
+<li>Améliorer les KPI budgétaires du département.</li>
+</ul>
+<p>Le serveur Apache a été configuré manuellement. Lorsque j'ai interrogé Monsieur Sylla Hassane sur cette approche, il a expliqué qu'il souhaitait :</p>
+<ul>
+<li>avoir un contrôle total sur les composants,</li>
+<li>pouvoir mettre à jour Apache et PHP indépendamment,</li>
+<li>maîtriser les dépendances système.</li>
+</ul>
+<p>Cette démarche révèle une volonté d'architecture maîtrisée et modulaire.</p>
 </div>
-
 <div id="574-creation-des-comptes-sap-et-configuration">
 <h3>5.7.4 Création des comptes SAP et configuration</h3>
-<img src="IMAGES/A%20(2).png" alt="Configuration SAP">
-<p>J'ai obtenu mes accès Windows et SAP durant cette semaine.</p>
-<img src="IMAGES/A%20(5).png" alt="SAP Config 1">
-<img src="IMAGES/A%20(6).png" alt="SAP Config 2">
+<p><img src="IMAGES/A%20(2).png" alt="alt text">
+J'ai obtenu mes accès Windows et SAP durant cette semaine. La procédure de configuration SAP Logon comprenait :</p>
+<ul>
+<li>création d'un nouveau dossier,</li>
+<li>création d'une nouvelle connexion,</li>
+<li>paramétrage des environnements (ECX, ECP),</li>
+<li>configuration du mot de passe.</li>
+</ul>
+<p>Cette étape m'a permis de mieux comprendre l'environnement technique SAP côté utilisateur.
+<img src="IMAGES/A%20(5).png" alt="alt text">
+<img src="IMAGES/A%20(6).png" alt="alt text"></p>
 </div>
-
 <div id="575-choix-du-module-sap--orientation-vers-mm">
 <h3>5.7.5 Choix du module SAP : orientation vers MM</h3>
-<img src="IMAGES/A%20(4).png" alt="SAP MM">
-<p>J'ai choisi le module MM (Material Management). Transactions étudiées : MMBE, MB51, MD04.</p>
+<p><img src="IMAGES/A%20(4).png" alt="alt text">
+Suite à une orientation demandée par Monsieur Moud Barry, nous devions choisir un module SAP correspondant à notre profil académique. Compte tenu de mes différents parcours (QSHE, logistique et systèmes), j'ai choisi le module <strong>MM (Material Management)</strong>.</p>
+<p><strong>Transactions étudiées :</strong></p>
+<ul>
+<li><strong>MMBE</strong> : aperçu des stocks,</li>
+<li><strong>MB51</strong> : liste des documents matériels,</li>
+<li><strong>MD04</strong> : situation des besoins et disponibilités.</li>
+</ul>
+<p>J'ai commencé à analyser le cycle complet d'approvisionnement :</p>
+<ol>
+<li>Demande d'achat</li>
+<li>Commande</li>
+<li>Réception (MIGO)</li>
+<li>Mouvement de stock</li>
+<li>Comptabilisation</li>
+</ol>
+<p>Cette vision globale m'a permis de relier les transactions entre elles.</p>
 </div>
-
 <div id="576-participation-au-developpement-du-projet--19022026">
 <h3>5.7.6 Participation au développement du projet – 19/02/2026</h3>
-<p>Nous avons assisté Monsieur Sylla Hassane dans la configuration Laravel, l'installation MySQL, et la connexion base de données.</p>
+<p>Nous avons assisté Monsieur Sylla Hassane dans :</p>
+<ul>
+<li>la configuration Laravel,</li>
+<li>l'installation MySQL,</li>
+<li>la connexion base de données,</li>
+<li>l'application PHP.</li>
+</ul>
+<p>Ce projet de plateforme de bulletins de paie combine :</p>
+<ul>
+<li>PHP,</li>
+<li>Laravel,</li>
+<li>MySQL,</li>
+<li>Apache Server.</li>
+</ul>
+<p>Il constitue une première immersion dans un environnement de développement web interne.</p>
 </div>
-
 <div id="7-difficultes-rencontrees-1">
 <h2>7. Difficultés rencontrées – Semaine 2</h2>
-<p>Difficulté de compréhension du processus de réservation (MB24), retard dans l'obtention du matériel, difficulté d'orientation module SAP.</p>
+<ol>
+<li><strong>Difficulté de compréhension du processus de réservation (MB24)</strong>
+<ul>
+<li><em>Solution</em> : Explication détaillée du flux par un encadrant.</li>
+</ul>
+</li>
+<li><strong>Retard dans l'obtention du matériel (écran)</strong>
+<ul>
+<li><em>Impact</em> : ralentissement temporaire de productivité.</li>
+</ul>
+</li>
+<li><strong>Difficulté d'orientation module SAP</strong>
+<ul>
+<li><em>Contexte</em> : profil académique polyvalent.</li>
+<li><em>Solution</em> : choix stratégique basé sur la cohérence logistique.</li>
+</ul>
+</li>
+</ol>
 </div>
-
 <div id="8-analyse-critique--semaine-2">
 <h2>8. Analyse critique – Semaine 2</h2>
-<img src="IMAGES/A%20(3).png" alt="SAP Flow">
-<p>SAP fonctionne comme un système interconnecté. Le projet de digitalisation des fiches de paie illustre une transformation digitale orientée.</p>
+<h3>8.1 Logique intégrée des flux SAP</h3>
+<p>Cette semaine m'a permis de comprendre que SAP fonctionne comme un système interconnecté :</p>
+<ul>
+<li>une réservation impacte le stock,</li>
+<li>un mouvement génère une écriture,</li>
+<li>une erreur logistique bloque un processus financier.</li>
+</ul>
+<p>Le système impose une discipline opérationnelle rigoureuse.
+<img src="IMAGES/A%20(3).png" alt="alt text"></p>
+<h3>8.2 Digitalisation et réduction des coûts</h3>
+<p>Le projet de dématérialisation des fiches de paie illustre une transformation digitale orientée :</p>
+<ul>
+<li>réduction des coûts directs,</li>
+<li>réduction de l'empreinte environnementale,</li>
+<li>amélioration de l'efficacité administrative.</li>
+</ul>
+<p>Cela montre que l'IT devient un levier stratégique et non uniquement un support technique.</p>
+<h3>8.3 Approche technique : manuelle vs automatisée</h3>
+<p>Le choix d'installation manuelle d'Apache révèle une préférence pour :</p>
+<ul>
+<li>la maîtrise technique,</li>
+<li>le contrôle des dépendances,</li>
+<li>la sécurité des mises à jour.</li>
+</ul>
+<p>Cette approche est pertinente dans un environnement industriel où la stabilité prime sur la rapidité de déploiement.</p>
 </div>
-
 <div id="10-developpement-professionnel-1">
 <h2>10. Développement professionnel – Semaine 2</h2>
-<p>Cette semaine m'a permis de comprendre la logique des flux logistiques SAP et de développer une vision orientée processus.</p>
+<p>Cette deuxième semaine m'a permis de :</p>
+<ul>
+<li>comprendre la logique des flux logistiques SAP,</li>
+<li>développer une vision orientée processus,</li>
+<li>améliorer ma capacité d'apprentissage autonome,</li>
+<li>renforcer ma rigueur dans la mémorisation des transactions.</li>
+</ul>
 </div>
-
-<!-- ==================== SEMAINE 3 ==================== -->
 <h2>5.8 Troisième semaine : coordination managériale, outils digitaux et gestion de données</h2>
-
 <div id="581-reunion-hebdomadaire-et-management-operationnel--23022026">
 <h3>5.8.1 Réunion hebdomadaire et management opérationnel – 23/02/2026</h3>
-<p>Chaque lundi, Monsieur Moud organise une réunion d'équipe centrée sur la sécurité, le suivi des projets, et la revue des tâches via Autotask/Datto.</p>
+<p>Chaque lundi, Monsieur Moud organise une réunion d'équipe centrée sur :</p>
+<ul>
+<li>la sécurité,</li>
+<li>le suivi des projets,</li>
+<li>la revue des tâches via l'outil de gestion Autotask/Datto.</li>
+</ul>
+<p>Cette session hebdomadaire permet :</p>
+<ul>
+<li>d'aligner les priorités,</li>
+<li>de suivre l'avancement des projets,</li>
+<li>d'identifier les risques,</li>
+<li>de renforcer la culture sécurité.</li>
+</ul>
+<p>J'ai observé un style de management structuré, orienté vers la performance et la responsabilité collective.</p>
 </div>
-
 <div id="582-inventaire-des-applications-utilisees-sur-le-reseau--24022026">
 <h3>5.8.2 Inventaire des applications utilisées sur le réseau – 24/02/2026</h3>
-<p>Nous avons réalisé un inventaire des applications utilisées au sein de la CBG. Résultat : plus de 2000 éléments recensés.</p>
+<p>Une mission nous a été confiée : réaliser un inventaire des applications utilisées au sein de la CBG sur les cinq dernières années.</p>
+<p>Pour cela, nous avons procédé à :</p>
+<ul>
+<li>l'installation du Microsoft Assessment and Planning Toolkit,</li>
+<li>l'analyse du réseau,</li>
+<li>la collecte automatisée des données.</li>
+</ul>
+<p><strong>Résultat :</strong> plus de 2000 éléments recensés.</p>
+<p>Cette activité m'a permis de comprendre l'importance :</p>
+<ul>
+<li>de la cartographie applicative,</li>
+<li>de la gouvernance IT,</li>
+<li>du contrôle des actifs numériques.</li>
+</ul>
 </div>
-
 <div id="583-assistance-sap--transaction-iw21--25022026">
 <h3>5.8.3 Assistance SAP : transaction IW21 – 25/02/2026</h3>
-<p>Nous avons assisté un utilisateur pour la création d'un avis via la transaction IW21.</p>
+<p>Nous avons assisté un utilisateur pour la création d'un avis via la transaction IW21. La difficulté rencontrée concernait un problème de prise de contrôle à distance du poste utilisateur.</p>
+<p>Cette situation m'a permis d'identifier l'importance :</p>
+<ul>
+<li>des outils de support à distance fiables,</li>
+<li>de la réactivité IT,</li>
+<li>de la maîtrise des transactions de maintenance.</li>
+</ul>
 </div>
-
 <div id="584-analyse-et-restructuration-dune-application-infopath--26022026">
 <h3>5.8.4 Analyse et restructuration d'une application InfoPath – 26/02/2026</h3>
-<p>Nous avons analysé une application développée sous InfoPath pour la fiche de présence Santé-Sécurité.</p>
+<p>Nous avons commencé l'analyse d'une application développée sous InfoPath, destinée à reproduire une fiche de présence Santé-Sécurité.</p>
+<p>L'objectif était de :</p>
+<ul>
+<li>décomposer l'architecture,</li>
+<li>identifier les rôles utilisateurs,</li>
+<li>comprendre la logique des champs et validations.</li>
+</ul>
+<p>Cette phase d'analyse fonctionnelle m'a permis de développer une approche méthodique de lecture applicative.</p>
 </div>
-
 <div id="585-nettoyage-dun-fichier-logistique-volumineux">
 <h3>5.8.5 Nettoyage d'un fichier logistique volumineux</h3>
-<p>Nous avons traité un fichier Excel de 87 000 lignes pour le nettoyage et la structuration des données.</p>
+<p>Un fichier Excel de gestion de stock nous a été confié :</p>
+<ul>
+<li>taille : 7 Mo,</li>
+<li>volume : plus de 87 000 lignes,</li>
+<li>colonnes : A à O.</li>
+</ul>
+<p><strong>Difficultés rencontrées :</strong></p>
+<ul>
+<li>lenteur du système,</li>
+<li>surcharge liée aux formules,</li>
+<li>temps de traitement de 5 à 10 minutes par action.</li>
+</ul>
+<p>Malgré ces contraintes, j'ai :</p>
+<ul>
+<li>nettoyé les données,</li>
+<li>trié selon des critères spécifiques,</li>
+<li>optimisé partiellement la structure.</li>
+</ul>
 </div>
-
 <div id="586-decouverte-doutils-innovants--synthesia">
 <h3>5.8.6 Découverte d'outils innovants : Synthesia</h3>
-<p>Monsieur Moud nous a présenté Synthesia, un outil basé sur l'IA pour la création de vidéos assistées.</p>
+<p>Monsieur Moud nous a présenté un nouvel outil basé sur l'intelligence artificielle, <strong>Synthesia</strong>, utilisé pour la création de vidéos assistées par IA.</p>
+<p>Cet outil pourrait être exploité pour :</p>
+<ul>
+<li>des formations internes,</li>
+<li>des communications sécurité,</li>
+<li>des supports pédagogiques.</li>
+</ul>
+<p>Cette découverte a élargi ma vision sur l'intégration de l'IA dans les processus d'entreprise.</p>
 </div>
-
 <div id="difficultes-rencontrees--semaine-3">
 <h2>7. Difficultés rencontrées – Semaine 3</h2>
-<p>Problème de performance du poste lors du traitement de données volumineuses, difficulté de prise de contrôle à distance.</p>
+<p>Les principales difficultés ont été :</p>
+<ul>
+<li>le problème de performance du poste lors du traitement de données volumineuses,</li>
+<li>la difficulté de prise de contrôle à distance,</li>
+<li>la reprise du travail suite à une modification des exigences.</li>
+</ul>
 </div>
-
 <div id="analyse-critique--semaine-3">
 <h2>8. Analyse critique – Semaine 3</h2>
-<p>Leadership et gouvernance IT, limites d'Excel dans la gestion de données volumineuses, digitalisation et intelligence artificielle.</p>
+<h3>8.1 Leadership et gouvernance IT</h3>
+<p>Les réunions hebdomadaires démontrent une gouvernance structurée, un pilotage basé sur des indicateurs et une culture de responsabilité partagée.</p>
+<h3>8.2 Gouvernance des actifs numériques</h3>
+<p>L'inventaire applicatif met en évidence l'importance de la maîtrise du parc logiciel, du contrôle des licences et de la sécurité réseau.</p>
+<h3>8.3 Limites d'Excel dans la gestion de données volumineuses</h3>
+<p>Le traitement d'un fichier de 87 000 lignes révèle les limites d'Excel en environnement industriel et la nécessité d'outils plus robustes comme les bases de données, Power BI ou SQL.</p>
+<h3>8.4 Digitalisation et intelligence artificielle</h3>
+<p>L'introduction d'outils comme Synthesia montre que l'IA devient un levier de communication interne et que l'innovation est encouragée au sein du département.</p>
 </div>
-
-<!-- ==================== SEMAINES 4 À 12 ==================== -->
-<!-- Due to length constraints, the remaining content (Semaines 4-12) follows the same pattern -->
-<!-- Your complete content from Semaine 4 through Semaine 12 and all Annexes should be placed here -->
-
+<div id="developpement-professionnel-1">
+<h2>10. Développement professionnel – Semaine 3</h2>
+<p>Cette semaine m'a permis de :</p>
+<ul>
+<li>comprendre les mécanismes de management IT,</li>
+<li>développer mes compétences en analyse de données,</li>
+<li>améliorer ma gestion du stress face aux contraintes techniques,</li>
+<li>renforcer ma capacité d'apprentissage autonome.</li>
+</ul>
+</div>
+<h2>5.9 Quatrième semaine : analyse de données, systèmes d'information et support utilisateurs</h2>
+<div id="591-developpement-dun-tableau-de-bord-power-bi--02032026">
+<h3>5.9.1 Développement d'un tableau de bord Power BI – 02/03/2026</h3>
+<p>Au cours de cette journée, j'ai poursuivi les travaux confiés par Monsieur Moud. J'ai notamment travaillé sur la modélisation d'un tableau de bord Power BI consacré à l'analyse de données étudiantes.</p>
+<p>L'objectif de cet exercice était de développer mes compétences en analyse de données et en visualisation, en structurant les informations sous forme de graphiques et d'indicateurs pertinents.</p>
+<p>Dans l'après-midi, Monsieur Hassane a présenté une nouvelle version de l'application de gestion des bulletins de paie destinée au département des ressources humaines.</p>
+</div>
+<div id="592-traitement-de-donnees-excel-et-support-sap--03032026">
+<h3>5.9.2 Traitement de données Excel et support SAP – 03/03/2026</h3>
+<p>Monsieur Hassane nous a confié un travail supplémentaire impliquant l'analyse d'un fichier Excel. L'objectif était d'identifier des articles ayant la même désignation mais des prix différents.</p>
+<p>Face aux difficultés rencontrées, Monsieur Moud nous a ensuite montré la procédure correcte :</p>
+<ul>
+<li>transaction utilisée : <strong>SE38</strong>,</li>
+<li>programme exécuté : <strong>SALVBSADMINMAINTAIN</strong>.</li>
+</ul>
+<p>Cette procédure permet d'activer la fonctionnalité d'export Excel pour un utilisateur spécifique. Cette démonstration m'a permis de mieux comprendre la gestion des autorisations et des fonctionnalités utilisateurs dans SAP.</p>
+</div>
+<div id="593-approfondissement-du-module-sap-mm--04032026">
+<h3>5.9.3 Approfondissement du module SAP MM – 04/03/2026</h3>
+<p>Cette journée a été consacrée à l'approfondissement de mes connaissances sur le module SAP MM (Material Management).</p>
+<p>J'ai étudié plusieurs transactions importantes liées au processus d'approvisionnement :</p>
+<ul>
+<li><strong>ME51N</strong> : création de demande d'achat,</li>
+<li><strong>ME52N</strong> : modification de demande d'achat,</li>
+<li><strong>ME5A</strong> : affichage de la liste des demandes d'achat,</li>
+<li><strong>ME21N</strong> : création de commande d'achat.</li>
+</ul>
+<p>Cette étude m'a permis de comprendre le cycle complet du processus d'approvisionnement dans SAP.</p>
+</div>
+<div id="594-introduction-au-systeme-as400-et-a-la-cybersurveillance--05032026">
+<h3>5.9.4 Introduction au système AS400 et à la cybersurveillance – 05/03/2026</h3>
+<p>Monsieur Moud nous a présenté certaines commandes du système AS400, notamment la commande <strong>Override</strong>, qui permet de rediriger temporairement l'accès à certains fichiers ou ressources.</p>
+<p>Par ailleurs, nous avons suivi une session de formation en ligne consacrée aux systèmes de vidéosurveillance CCTV, utilisant la plateforme <strong>Genetec Omnicast</strong>.</p>
+</div>
+<div id="595-decouverte-de-larchitecture-systeme-cbg-et-extraction-de-donnees-sap--06032026">
+<h3>5.9.5 Découverte de l'architecture système CBG et extraction de données SAP – 06/03/2026</h3>
+<p>Afin de mieux comprendre l'architecture informatique de l'entreprise, Monsieur Moud nous a partagé plusieurs ressources sur le système <strong>AS400</strong>, qui constitue une composante centrale de l'infrastructure informatique. Ce système héberge plusieurs applications importantes, notamment SAP, Oracle et d'autres applications critiques.</p>
+<p>Pour nous permettre de pratiquer sans risque pour les systèmes de production, nous avons utilisé la plateforme <strong>PUB400</strong>, un environnement de formation permettant d'exécuter des commandes AS400.</p>
+<p>Par ailleurs, j'ai assisté Monsieur Saidou dans l'extraction de données SAP destinées à la création de rapports sous Power BI.</p>
+</div>
+<div id="difficultes-rencontrees--semaine-4">
+<h2>7. Difficultés rencontrées – Semaine 4</h2>
+<p>Plusieurs difficultés ont été rencontrées :</p>
+<ul>
+<li>difficulté à automatiser l'analyse de données Excel,</li>
+<li>complexité de certaines autorisations SAP,</li>
+<li>gestion simultanée de plusieurs tâches techniques.</li>
+</ul>
+</div>
+<div id="analyse-critique--semaine-4">
+<h2>8. Analyse critique – Semaine 4</h2>
+<p>Cette semaine a mis en évidence l'importance de l'intégration des systèmes d'information dans un environnement industriel. L'utilisation combinée de technologies telles que SAP, Power BI, AS400, SharePoint et InfoPath montre que la performance organisationnelle repose sur une interopérabilité efficace des outils numériques.</p>
+<p>Elle a également montré que la gestion des données devient un enjeu stratégique, notamment pour l'aide à la décision et le pilotage des activités.</p>
+</div>
+<div id="developpement-professionnel-2">
+<h2>10. Développement professionnel – Semaine 4</h2>
+<p>Cette quatrième semaine m'a permis de :</p>
+<ul>
+<li>renforcer mes compétences en SAP MM,</li>
+<li>développer mes capacités d'analyse de données,</li>
+<li>mieux comprendre l'architecture informatique d'une grande entreprise industrielle,</li>
+<li>améliorer ma capacité à travailler sur plusieurs projets simultanément.</li>
+</ul>
+</div>
+<h2>5.10 Cinquième semaine : administration des systèmes, gestion des accès et analyse de données</h2>
+<div id="5101-reunion-hebdomadaire-et-suivi-des-projets--09032026">
+<h3>5.10.1 Réunion hebdomadaire et suivi des projets – 09/03/2026</h3>
+<p>Comme chaque début de semaine, l'équipe a tenu une réunion de coordination afin de faire un point global sur l'état d'avancement des différents projets et sous-projets du département.</p>
+<p>Au cours de cette réunion, Monsieur Abdoulaye a présenté son travail relatif à la gestion des congés des employés. Il a notamment développé un rapport <strong>Power BI Report Builder</strong>, qu'il a conçu depuis la phase de structuration des données jusqu'à la visualisation finale.</p>
+</div>
+<div id="5102-exploration-du-systeme-as400-et-de-lenvironnement-pub400--10032026">
+<h3>5.10.2 Exploration du système AS400 et de l'environnement PUB400 – 10/03/2026</h3>
+<p>Cette journée a été consacrée à la poursuite de mes travaux d'extraction de données pour Monsieur Saidou, ainsi qu'à l'apprentissage du système AS400.</p>
+<p>J'ai notamment utilisé la plateforme <strong>PUB400</strong>, qui permet de pratiquer les commandes du système dans un environnement sécurisé. La configuration initiale a représenté un défi technique.</p>
+<p>À l'issue de ces recherches, j'ai rédigé une documentation personnelle sur l'utilisation de PUB400 et les bases du système AS400.</p>
+</div>
+<div id="5103-attribution-de-nouvelles-responsabilites--gestion-des-mots-de-passe-sap">
+<h3>5.10.3 Attribution de nouvelles responsabilités : gestion des mots de passe SAP</h3>
+<p>Au cours de cette semaine, mon collègue stagiaire et moi avons reçu une nouvelle responsabilité : <strong>la gestion du renouvellement des mots de passe des utilisateurs SAP</strong>.</p>
+<p>Cette tâche consiste à :</p>
+<ul>
+<li>vérifier l'identité de l'utilisateur,</li>
+<li>appliquer la procédure de réinitialisation,</li>
+<li>accompagner l'utilisateur dans la configuration du nouveau mot de passe.</li>
+</ul>
+<p>Cette responsabilité constitue une marque de confiance de la part de l'équipe.</p>
+</div>
+<div id="5104-difficultes-rencontrees-lors-du-renouvellement-des-mots-de-passe--11032026">
+<h3>5.10.4 Difficultés rencontrées lors du renouvellement des mots de passe – 11/03/2026</h3>
+<p>Lors de l'exécution de cette tâche, j'ai rencontré une difficulté liée à la cohérence des informations utilisateur. Les informations personnelles associées au compte SAP ne correspondaient pas exactement aux données configurées dans l'environnement <strong>SAP ECP</strong>, ce qui empêchait la validation du nouveau mot de passe.</p>
+</div>
+<div id="5105-nettoyage-et-traitement-de-donnees-bancaires--12032026">
+<h3>5.10.5 Nettoyage et traitement de données bancaires – 12/03/2026</h3>
+<p>Nous avons assisté le département comptable dans une opération de nettoyage de données relatives aux informations bancaires des employés.</p>
+<p>Les tables SAP utilisées étaient :</p>
+<ul>
+<li><strong>PA0009</strong> : données bancaires des employés,</li>
+<li><strong>BNKA</strong> : informations relatives aux institutions bancaires.</li>
+</ul>
+<p>L'objectif était d'aligner correctement les employés avec les banques où leurs comptes sont domiciliés.</p>
+</div>
+<div id="5106-developpement-dun-formulaire-hse-avec-infopath--13032026">
+<h3>5.10.6 Développement d'un formulaire HSE avec InfoPath – 13/03/2026</h3>
+<p>La dernière journée de cette semaine a été consacrée à l'apprentissage et à la configuration d'un formulaire HSE développé avec <strong>Microsoft InfoPath</strong> et <strong>SharePoint</strong>.</p>
+<p>Sous la supervision de Monsieur Abdoulaye, nous avons travaillé sur la conception et la structuration d'un formulaire destiné à faciliter la collecte et la gestion de données relatives à la santé et à la sécurité.</p>
+</div>
+<h2>5.11 Sixième semaine : développement d'application et travail collaboratif</h2>
+<div id="5113-lancement-du-projet-power-apps-laissez-passer--18032026">
+<h3>5.11.3 Lancement du projet Power Apps Laissez-Passer – 18/03/2026</h3>
+<p>Cette journée a marqué le début d'un projet majeur confié par Monsieur Cellou : la conception d'une application intitulée <strong>Laissez-Passer / Gate Pass</strong> à l'aide de Microsoft Power Apps.</p>
+<p>L'objectif du projet était de :</p>
+<ul>
+<li>digitaliser un formulaire papier existant,</li>
+<li>créer une interface avec plusieurs champs de saisie,</li>
+<li>automatiser la gestion des demandes d'accès.</li>
+</ul>
+<p>Nous avons rencontré de nombreuses difficultés techniques. Pour surmonter ces obstacles, nous avons utilisé plusieurs ressources :</p>
+<ul>
+<li>tutoriels YouTube,</li>
+<li>outils d'intelligence artificielle comme ChatGPT et Copilot,</li>
+<li>documentation en ligne.</li>
+</ul>
+</div>
+<div id="5114-avancement-du-developpement-et-complexite-de-power-apps--19032026">
+<h3>5.11.4 Avancement du développement et complexité de Power Apps – 19/03/2026</h3>
+<p>Cette journée a été consacrée à la poursuite du développement de l'application Laissez-Passer. Nous avons réussi à implémenter certaines fonctionnalités clés, notamment :</p>
+<ul>
+<li>la création de boutons d'action,</li>
+<li>la gestion des interactions utilisateur.</li>
+</ul>
+<p>Monsieur Cellou nous a orientés vers l'utilisation du concept de <strong>table extensible</strong>, permettant d'afficher et de manipuler plusieurs listes SharePoint dans une même interface Power Apps.</p>
+<p>Après deux jours de travail intensif, nous avons pris la décision stratégique de simplifier l'application afin de prioriser la livraison d'une version fonctionnelle.
+<img src="images/sharepointlookuplist.png" alt="alt text"></p>
+<div style="flex: 1; text-align: center;">
+    <img src="images/sharepointmainlist.png" alt="MB51" style="width: 100%; max-width: 200px;">
+    <p><strong>Liste Laissez passer</strong><br>My SharePoint list</p>
+</div>
+</div>
+<div id="difficultes-rencontrees--semaine-6">
+<h2>7. Difficultés rencontrées – Semaine 6</h2>
+<p>Les principales difficultés rencontrées sont :</p>
+<ul>
+<li>la prise en main de Power Apps et de sa logique de fonctionnement,</li>
+<li>l'intégration entre SharePoint et Power Apps,</li>
+<li>la complexité de l'interface utilisateur,</li>
+<li>la gestion des nombreuses erreurs techniques.</li>
+</ul>
+</div>
+<div id="analyse-critique--semaine-6">
+<h2>8. Analyse critique – Semaine 6</h2>
+<p>Cette semaine met en évidence l'importance des plateformes <strong>Low-Code/No-Code</strong> dans la transformation digitale des entreprises. Des outils comme Power Apps permettent de développer rapidement des solutions internes, de digitaliser des processus métier et de réduire la dépendance aux équipes de développement.</p>
+<p>Cependant, cette expérience montre que ces outils restent complexes pour les débutants et que leur efficacité dépend fortement de la maîtrise des concepts sous-jacents : données, logique et intégration.</p>
+</div>
+<h2>5.12 Septième semaine : développement avancé et automatisation</h2>
+<div id="5122-poursuite-du-projet-power-apps">
+<h3>5.12.2 Poursuite du projet Power Apps</h3>
+<p>Le développement de l'application Laissez-Passer s'est poursuivi avec une meilleure compréhension de la structure de l'outil. Nous avons travaillé sur :</p>
+<ul>
+<li>l'organisation des écrans,</li>
+<li>la gestion des formulaires,</li>
+<li>la connexion avec les listes SharePoint,</li>
+<li>l'amélioration de la navigation entre les composants.</li>
+</ul>
+</div>
+<div id="5123-introduction-a-lautomatisation">
+<h3>5.12.3 Introduction à l'automatisation</h3>
+<p>Au cours de cette semaine, nous avons également commencé à explorer des approches d'automatisation pour réduire certaines tâches répétitives. L'objectif était d'identifier les étapes pouvant être simplifiées ou déclenchées automatiquement afin d'améliorer la productivité.</p>
+<p>Cette démarche m'a permis de comprendre que l'automatisation n'est pas seulement une question d'outil, mais aussi une logique d'optimisation des processus.</p>
+</div>
+<div id="513-huitieme-semaine--integration-des-workflows-et-optimisation-des-outils">
+<h2>5.13 Huitième semaine : intégration des workflows et optimisation des outils</h2>
+<h3>5.13.1 Suivi des activités en cours</h3>
+<p>La huitième semaine a été consacrée au suivi des différents travaux déjà engagés. Les projets en cours ont nécessité une attention particulière afin d'assurer leur continuité, leur cohérence et leur bonne exécution.</p>
+<h3>5.13.2 Ajustements sur l'application Laissez-Passer</h3>
+<p>Nous avons poursuivi les ajustements de l'application en apportant quelques améliorations au niveau de la structure et de la présentation. L'objectif était de rendre l'outil plus simple à utiliser et plus proche des besoins réels des utilisateurs.</p>
+<h3>5.13.3 Analyse de données et contrôle de qualité</h3>
+<p>J'ai également participé à des activités liées à l'analyse et au contrôle de données. Ces travaux consistaient à vérifier la cohérence d'informations issues de différents fichiers et à repérer les anomalies susceptibles de perturber les traitements ou les rapports.</p>
+</div>
+<div id="514-neuvieme-semaine--support-verification-et-consolidation-des-acquis">
+<h2>5.14 Neuvième semaine : support, vérification et consolidation des acquis</h2>
+<h3>5.14.1 Retour sur les activités précédentes</h3>
+<p>La neuvième semaine a été marquée par un retour sur plusieurs activités déjà entamées. Les efforts se sont concentrés sur la consolidation des acquis, la correction de certaines erreurs et la vérification des résultats obtenus.</p>
+<h3>5.14.2 Support et assistance technique</h3>
+<p>J'ai participé à plusieurs actions de support, notamment pour aider à résoudre des difficultés rencontrées par certains utilisateurs ou collaborateurs. Ces interventions m'ont permis de mieux comprendre l'importance de la réactivité et de la clarté dans la communication avec les utilisateurs.</p>
+<h3>5.14.3 Consolidation des outils digitaux</h3>
+<p>Des travaux de consolidation ont également été menés sur les outils digitaux déjà utilisés. L'objectif était d'assurer leur bon fonctionnement, leur stabilité et leur cohérence avec les besoins des équipes.</p>
+</div>
+<div id="515-dixieme-semaine--approfondissement-fonctionnel-et-stabilisation-des-projets">
+<h2>5.15 Dixième semaine : approfondissement fonctionnel et stabilisation des projets</h2>
+<h3>5.15.1 Suivi des livrables</h3>
+<p>La dixième semaine a été consacrée au suivi des livrables et à la stabilisation des projets en cours. L'objectif était de s'assurer que les productions réalisées répondaient bien aux attentes.</p>
+<h3>5.15.2 Approfondissement fonctionnel</h3>
+<p>J'ai continué à approfondir ma compréhension des différents outils et processus manipulés au cours du stage. J'ai notamment observé que les solutions informatiques développées dans l'entreprise ne sont pas isolées : elles s'inscrivent dans une logique globale de gestion, de sécurité et de performance.</p>
+</div>
+<div id="516-onzieme-semaine--autonomie-responsabilites-et-maturite-professionnelle">
+<h2>5.16 Onzième semaine : autonomie, responsabilités et maturité professionnelle</h2>
+<h3>5.16.1 Montée en autonomie</h3>
+<p>La onzième semaine a marqué une montée en autonomie dans l'exécution des tâches. J'ai été davantage sollicité pour travailler avec moins d'assistance directe, ce qui m'a permis de mobiliser plus librement mes acquis.</p>
+<h3>5.16.2 Responsabilités accrues</h3>
+<p>Les activités de cette semaine ont montré que la confiance accordée par l'équipe augmentait progressivement. Cela s'est traduit par des responsabilités plus importantes dans l'exécution, le suivi et la vérification de certaines tâches.</p>
+</div>
+<div id="517-douzieme-semaine--bilan-final-et-cloture-du-stage">
+<h2>5.17 Douzième semaine : bilan final et clôture du stage</h2>
+<h3>5.17.1 Bilan des activités réalisées</h3>
+<p>La douzième semaine a été consacrée au bilan des activités menées tout au long du stage. Cette période m'a permis de revoir l'ensemble des travaux réalisés, d'évaluer les acquis obtenus et de mesurer les compétences développées.</p>
+<h3>5.17.2 Évaluation des acquis</h3>
+<p>J'ai pu identifier les connaissances et compétences renforcées durant le stage, notamment dans les domaines suivants :</p>
+<ul>
+<li>SAP,</li>
+<li>Power BI,</li>
+<li>Power Apps,</li>
+<li>SharePoint,</li>
+<li>InfoPath,</li>
+<li>AS400,</li>
+<li>support utilisateur,</li>
+<li>organisation et gestion des données.</li>
+</ul>
+</div>
 <div id="8-competences-techniques-acquises">
 <h2>8. Compétences techniques acquises</h2>
 <ul>
@@ -470,36 +857,105 @@
 <li><strong>Power BI</strong> : création de tableaux de bord, modélisation de données</li>
 <li><strong>Power Apps</strong> : développement d'application Laissez-Passer, intégration SharePoint</li>
 <li><strong>Power Automate</strong> : automatisation des workflows, génération de documents</li>
-<li><strong>AS400 / PUB400</strong> : commandes système, gestion des fichiers</li>
+<li><strong>SharePoint</strong> : gestion des listes, vues, intégration avec Power Apps</li>
+<li><strong>InfoPath</strong> : création et configuration de formulaires HSE</li>
+<li><strong>AS400 / PUB400</strong> : commandes système, gestion des fichiers, documentation</li>
+<li><strong>Outils de support</strong> : Datto, Autotask</li>
+<li><strong>Cybersécurité</strong> : BitLocker, vidéosurveillance (Genetec Omnicast)</li>
 <li><strong>Développement</strong> : PHP, Laravel, MySQL, Apache, Python/Django basics</li>
 </ul>
 </div>
-
-<div id="conclusion-generale">
-<h2>12. Conclusion générale</h2>
-<p>Ce stage au sein de la CBG a constitué une expérience particulièrement enrichissante, tant sur le plan technique que professionnel. Il m'a permis de découvrir un environnement industriel exigeant, de comprendre le rôle stratégique des systèmes d'information et de participer à des projets concrets à forte valeur ajoutée.</p>
-</div>
-
-<div id="annexes-1">
-<h2>13. Annexes</h2>
-<p>📁 DOCUMENTS ET RESSOURCES</p>
+<div id="9-difficultes-rencontrees">
+<h2>9. Difficultés rencontrées (Synthèse générale)</h2>
 <ul>
-<li><a href="./CartographieapplicativeCBG.pdf">📄 Cartographie applicative CBG</a></li>
-<li><a href="./IbmIAdminManual.pdf">📄 IBM i ADMIN MANUAL</a></li>
-<li><a href="./Procédures_MB51.docx">📝 Procédures MB51/MB24</a></li>
+<li>Difficultés techniques sur Power Apps et Power Automate</li>
+<li>Gestion des données volumineuses sous Excel (87 000+ lignes)</li>
+<li>Complexité des autorisations et droits d'installation dans l'environnement CBG</li>
+<li>Problèmes de cohérence des données SAP (renouvellement mots de passe)</li>
+<li>Contraintes d'infrastructure physique (passage de câbles)</li>
+<li>Gestion simultanée de plusieurs tâches et projets</li>
+<li>Pression liée aux délais et aux livrables</li>
 </ul>
 </div>
-
+<div id="10-contribution-a-lentreprise">
+<h2>10. Contribution à l'entreprise</h2>
+<ul>
+<li>Digitalisation du processus "Laissez-Passer" avec Power Apps et Power Automate</li>
+<li>Génération automatisée de documents PDF pour les demandes</li>
+<li>Nettoyage et structuration de données logistiques et bancaires</li>
+<li>Extraction et contrôle de données RH SAP (tables PA0009, BNKA, HRP1000, HRP1001)</li>
+<li>Inventaire des applications utilisées sur le réseau (+2000 éléments recensés)</li>
+<li>Assistance utilisateur SAP et support technique</li>
+<li>Proposition et lancement du projet Django pour la gestion du logement CBG</li>
+<li>Rédaction d'une documentation sur l'utilisation de PUB400/AS400</li>
+</ul>
+</div>
+<div id="11-developpement-personnel-et-professionnel">
+<h2>11. Développement personnel et professionnel</h2>
+<p>Ce stage m'a permis de développer :</p>
+<ul>
+<li><strong>Autonomie</strong> : capacité à travailler avec moins d'assistance</li>
+<li><strong>Rigueur</strong> : vérification systématique des données et des procédures</li>
+<li><strong>Adaptabilité</strong> : gestion de technologies variées (SAP, Power Apps, AS400, etc.)</li>
+<li><strong>Esprit d'équipe</strong> : collaboration quotidienne avec mon binôme et l'équipe</li>
+<li><strong>Persévérance</strong> : résolution de problèmes techniques complexes</li>
+<li><strong>Communication professionnelle</strong> : reporting, support utilisateur</li>
+<li><strong>Maturité professionnelle</strong> : prise de responsabilités, gestion du stress</li>
+</ul>
+</div>
+<div id="conclusion-generale">
+<h2>12. Conclusion générale</h2>
+<p>Ce stage au sein de la <strong>Compagnie des Bauxites de Guinée (CBG)</strong> a constitué une expérience particulièrement enrichissante, tant sur le plan technique que professionnel.</p>
+<p>Il m'a permis de découvrir un environnement industriel exigeant, de comprendre le rôle stratégique des systèmes d'information et de participer à des projets concrets à forte valeur ajoutée.</p>
+<p>Au-delà des compétences techniques acquises, cette expérience a renforcé ma capacité d'adaptation, mon esprit d'analyse et ma rigueur professionnelle.</p>
+<p>Elle confirme également mon intérêt pour les domaines de l'informatique, de la data et de la transformation digitale, et constitue une étape importante dans la construction de mon projet professionnel.</p>
+<p>À terme, cette immersion me motive à poursuivre mon développement afin de devenir un professionnel capable de concevoir, analyser et optimiser des solutions informatiques adaptées aux besoins des organisations.</p>
+</div>
+<div id="annexes-1">
+<h2>13. Annexes</h2>
+<details open><summary><strong>📁 DOCUMENTS ET RESSOURCES</strong></summary>
+<br>
+<table>
+<thead>
+<tr><th>Type</th><th>Fichier</th><th>Lien</th></tr>
+</thead>
+<tbody>
+<tr><td>📄 PDF</td><td>Cartographie applicative CBG</td><td><a href="./CartographieapplicativeCBG.pdf">👁️ Voir le PDF</a></td></tr>
+<tr><td>📄 PDF</td><td>IBM i ADMIN MANUAL</td><td><a href="./IbmIAdminManual.pdf">👁️ Voir le PDF</a></td></tr>
+<tr><td>📊 SAP Online Course</td><td>Creating a Simple Purchase Order</td><td><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/ONLINE%20SAP%20COURSE/hands_on%20HOW%20TO%20CREATE%20PURCHASE%20ORDER.pdf">👁️ Voir le PDF</a></td></tr>
+<tr><td>📝 Word</td><td>Procédures MB51/MB24</td><td><a href="./Procédures_MB51.docx">👁️ Voir le document</a></td></tr>
+<tr><td>📝 PDF</td><td>Analyse de disfonctionnement du menu du site web CBG</td><td><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/NEW%20ARRIVAL/Analyse%20Dysfonctionnement%20du%20Menu.pdf">👁️ Voir le document</a></td></tr>
+<tr><td>📝 PDF</td><td>CYBERSECURITY_BITLOCKER</td><td><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/NEW%20ARRIVAL/BitLocker.pdf">👁️ Voir le document</a></td></tr>
+<tr><td>📝 PDF</td><td>LE TOP MANAGEMENT AUGMENTE PAR CES ASTUCES</td><td><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/NEW%20ARRIVAL/Le-Top-Management-augmente-par-SAP-and-M365.pptx%20(2).pdf">👁️ Voir le document</a></td></tr>
+<tr><td>📝 PDF</td><td>SAP MM (Materials Management)</td><td><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/NEW%20ARRIVAL/SAP%20MM%20(Materials%20Management)%20—%20Full%20Practical%20Course.pdf">👁️ Voir le document</a></td></tr>
+</tbody>
+</table>
+</details>
+<details><summary><strong>🖼️ CAPTURES D'ÉCRAN</strong></summary>
+<br>
+<ul>
+<li><a href="./IMAGES/TransactionsSAP/1MB51.png">Transaction MB51 - Mouvements de stock</a></li>
+<li><a href="./IMAGES/TransactionsSAP/2-MIGO.png">Transaction MIGO - Entrée marchandises</a></li>
+<li><a href="./IMAGES/TransactionsSAP/MMBE-%20plant%20or%20Every%20plant.png">Transaction MMBE - Plant</a></li>
+<li><a href="./IMAGES/TransactionsSAP/powerapps%20testing.png">Power Apps - Interface Laissez-Passer</a></li>
+<li><a href="./IMAGES/TransactionsSAP/powerapps%20programmingtestindg.png">Power Automate - Workflow approbation</a></li>
+</ul>
+</details>
+<details><summary><strong>📚 COURS ET FORMATIONS</strong></summary>
+<br>
+<ul>
+<li><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/MY%20LEARNING%20JOURNEY%20SAPLOGISTICS-MM.docx">Formation SAP Module MM</a></li>
+<li><a href="./INTERNSHIPSource/INTERNSHIP%20FILE/Le-Top-Management-augmente-par-SAP-and-M365.pdf">Le-Top-Management-augmente-par-SAP-and-M365</a></li>
+</ul>
+</details>
+</div>
 <div align="center">
 <hr>
 <p><em>Fin du rapport - <strong>Asbour Kaba Mohamed Diakité</strong> - 2026</em></p>
 <p><strong>GOD AS CEO AS ALWAYS</strong><br>
 <strong>GO BEYOND PLUS ULTRA.</strong></p>
 </div>
-
 </div>
-
-<!-- ==================== RIGHT TOC ==================== -->
 <div class="right-toc">
 <h4>📍 Sur cette page</h4>
 <a href="#confidentialite">Confidentialité</a>
@@ -510,8 +966,6 @@
 <a href="#conclusion-generale">Conclusion</a>
 <a href="#annexes-1">Annexes</a>
 </div>
-
 </div>
-
 </body>
 </html>
