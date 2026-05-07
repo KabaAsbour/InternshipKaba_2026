@@ -1,0 +1,91 @@
+"<html>
+<head>
+<style>
+  @page { size: A4 landscape; margin: 10mm; }
+  body { font-family: 'Segoe UI', Arial; font-size: 9px; margin: 0; color: #222; }
+  .document { border: 2px solid #2a5a8c; padding: 15px; margin: auto; }
+  .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px double #2a5a8c; padding-bottom: 8px; margin-bottom: 12px; }
+  .header-title { font-size: 18px; font-weight: bold; color: #2a5a8c; letter-spacing: 2px; text-align: center; flex-grow: 1; }
+  .header-date { font-size: 9px; color: #555; text-align: right; }
+  .filters-info { font-size: 8px; color: #555; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 8px; }
+  th { background-color: #dce6f0; color: #2a5a8c; padding: 5px 3px; font-size: 8px; text-align: center; border: 1px solid #aac4e0; line-height: 1.2; }
+  td { padding: 4px 3px; border: 1px solid #ccc; font-size: 8px; text-align: center; vertical-align: middle; word-break: break-word; line-height: 1.2; }
+  tr:nth-child(even) { background-color: #f4f8fc; }
+  tr:hover { background-color: #e8f0f8; }
+  .approved { color: #1a7f37; font-weight: bold; }
+  .rejected { color: #d32f2f; font-weight: bold; }
+  .pending { color: #f57c00; font-weight: bold; }
+  img { max-width: 35px; max-height: 35px; object-fit: contain; border: 1px solid #ccc; border-radius: 3px; }
+  .footer { margin-top: 10px; font-size: 7px; text-align: right; color: #666; border-top: 1px solid #2a5a8c; padding-top: 5px; }
+  @media print { body { font-size: 7px; } th, td { font-size: 7px; padding: 2px; } }
+</style>
+</head>
+<body>
+<div class='document'>
+
+  <div class='header'>
+    <div><b>CBG</b></div>
+    <div class='header-title'>RAPPORT LAISSEZ-PASSER</div>
+    <div class='header-date'>Date d'impression :<br>" & Text(Now(); "dd/mm/yyyy hh:mm") & "</div>
+  </div>
+
+  <table>
+    <tr>
+      <th>N°</th>
+      <th>Date</th>
+      <th>Requis par</th>
+      <th>Département</th>
+      <th>Destination</th>
+      <th>Transporté par</th>
+      <th>Matricule</th>
+      <th>Véhicule</th>
+      <th>N° Véhicule</th>
+      <th>Nom</th>
+      <th>Cachet</th>
+      <th>Émis par</th>
+      <th>Mat.</th>
+      <th>Autorisé par</th>
+      <th>Dept</th>
+      <th>DL</th>
+      <th>Statut</th>
+      <th>Approbateur 1</th>
+      <th>Approbateur 2</th>
+    </tr>" &
+Concat(
+    Filter(
+        'LAISSEZ PASSEZ';
+        (ddStatut.Selected.Value = "Tous" ||
+         Text(Statut.Value) = ddStatut.Selected.Value) &&
+        (txtDepartement.Text = "" ||
+         'Département 1' = txtDepartement.Text)
+    );
+    "<tr>
+      <td>" & 'N°' & "</td>
+      <td>" & Text(Date; "dd/mm/yyyy") & "</td>
+      <td>" & 'Requis par :' & "</td>
+      <td>" & 'Département 1' & "</td>
+      <td>" & Destination & "</td>
+      <td>" & 'Transporté par :' & "</td>
+      <td>" & Matricule & "</td>
+      <td>" & Véhicule & "</td>
+      <td>" & 'Numéro véhicule' & "</td>
+      <td>" & 'Nom (NOM)' & "</td>
+      <td>" & 'Matricule et cachet' & "</td>
+      <td>" & 'Emis par' & "</td>
+      <td>" & Matricul & "</td>
+      <td>" & 'Autorisé par' & "</td>
+      <td>" & Département & "</td>
+      <td>" & DL & "</td>
+      <td class='" & If(Text(Statut.Value)="Approuvé"; "approved"; Text(Statut.Value)="Rejeté"; "rejected"; "pending") & "'>" & Text(Statut.Value) & "</td>
+      <td><img src='" & JSON(Approbateur1) & "'/></td>
+      <td><img src='" & JSON(Approbateur2) & "'/></td>
+    </tr>"
+) &
+"</table>
+
+  <div class='footer'>Document généré automatiquement — Power Apps CBG</div>
+
+</div>
+</body>
+</html>"

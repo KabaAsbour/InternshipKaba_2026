@@ -1,0 +1,131 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .screen-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 1rem; }
+  .screen { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+  .screen-header { padding: 12px 16px; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; gap: 8px; }
+  .screen-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .screen-body { padding: 14px 16px; }
+  .step-track { display: flex; align-items: center; gap: 0; margin-bottom: 16px; }
+  .step-dot { width: 22px; height: 22px; border-radius: 50%; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; color: var(--color-text-secondary); flex-shrink: 0; }
+  .step-dot.done { background: var(--color-background-info); border-color: transparent; color: var(--color-text-info); }
+  .step-dot.active { background: #378ADD; border-color: transparent; color: #fff; }
+  .step-line { flex: 1; height: 0.5px; background: var(--color-border-tertiary); }
+  .step-line.done { background: #378ADD; }
+  .field { margin-bottom: 10px; }
+  .field-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 3px; }
+  .field-input { height: 32px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); width: 100%; background: var(--color-background-secondary); padding: 0 10px; font-size: 12px; color: var(--color-text-primary); display: flex; align-items: center; }
+  .field-select { height: 32px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); width: 100%; background: var(--color-background-secondary); padding: 0 10px; font-size: 12px; color: var(--color-text-secondary); display: flex; align-items: center; justify-content: space-between; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .maquette-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 10px; }
+  .maquette-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 8px 10px; cursor: pointer; }
+  .maquette-card.selected { border: 1.5px solid #378ADD; background: #E6F1FB; }
+  .maquette-card.locked { opacity: 0.45; }
+  .maquette-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .maquette-meta { font-size: 10px; color: var(--color-text-secondary); margin-top: 2px; }
+  .maquette-price { font-size: 11px; font-weight: 500; color: var(--color-text-info); margin-top: 4px; }
+  .btn-primary { background: #378ADD; color: #fff; border: none; border-radius: var(--border-radius-md); padding: 7px 16px; font-size: 12px; font-weight: 500; cursor: pointer; width: 100%; }
+  .info-box { background: var(--color-background-info); border: 0.5px solid var(--color-border-info); border-radius: var(--border-radius-md); padding: 8px 10px; margin-bottom: 10px; font-size: 11px; color: var(--color-text-info); }
+  .plan-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 12px; }
+  .plan-key { color: var(--color-text-secondary); }
+  .plan-val { font-weight: 500; color: var(--color-text-primary); }
+  .plan-val.highlight { color: var(--color-text-info); }
+  .month-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+  .month-dot { width: 18px; height: 18px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 9px; }
+  .m-paid { background: #EAF3DE; color: #3B6D11; }
+  .m-late { background: #FCEBEB; color: #A32D2D; }
+  .m-future { background: var(--color-background-secondary); color: var(--color-text-tertiary); }
+  .m-current { background: #378ADD; color: #fff; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin: 0 0 8px; }
+</style>
+
+<p class="section-label">Subscription form & individual payment tracking</p>
+<div class="screen-wrap">
+
+  <!-- Subscription form -->
+  <div class="screen">
+    <div class="screen-header">
+      <div style="width:7px;height:7px;border-radius:50%;background:#378ADD"></div>
+      <span class="screen-title">Nouvelle souscription</span>
+    </div>
+    <div class="screen-body">
+      <!-- Steps -->
+      <div class="step-track">
+        <div class="step-dot done">✓</div>
+        <div class="step-line done"></div>
+        <div class="step-dot active">2</div>
+        <div class="step-line"></div>
+        <div class="step-dot">3</div>
+        <div class="step-line"></div>
+        <div class="step-dot">4</div>
+      </div>
+      <div style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:10px">Choix de maquette</div>
+      <div class="info-box">Grade détecté : <strong>B2</strong> — 2 maquettes compatibles</div>
+      <div class="maquette-grid">
+        <div class="maquette-card selected">
+          <div class="maquette-name">Type F3</div>
+          <div class="maquette-meta">Grade A2–B3 · 3 pièces</div>
+          <div class="maquette-price">85 000 000 GNF</div>
+        </div>
+        <div class="maquette-card">
+          <div class="maquette-name">Type F2</div>
+          <div class="maquette-meta">Grade B1–C · 2 pièces</div>
+          <div class="maquette-price">62 000 000 GNF</div>
+        </div>
+        <div class="maquette-card locked">
+          <div class="maquette-name">Type F4</div>
+          <div class="maquette-meta">Grade A1 · 4 pièces</div>
+          <div class="maquette-price">120 000 000 GNF</div>
+        </div>
+        <div class="maquette-card locked">
+          <div class="maquette-name">Type F4+</div>
+          <div class="maquette-meta">Apport requis</div>
+          <div class="maquette-price">150 000 000 GNF</div>
+        </div>
+      </div>
+      <div class="two-col" style="margin-bottom:10px">
+        <div class="field">
+          <div class="field-label">Apport initial (GNF)</div>
+          <div class="field-input" style="color:var(--color-text-primary)">5 000 000</div>
+        </div>
+        <div class="field">
+          <div class="field-label">Mensualité calculée</div>
+          <div class="field-input" style="color:#185FA5;font-weight:500">444 444 GNF</div>
+        </div>
+      </div>
+      <button class="btn-primary">Suivant — Validation RH →</button>
+    </div>
+  </div>
+
+  <!-- Payment tracking -->
+  <div class="screen">
+    <div class="screen-header">
+      <div style="width:7px;height:7px;border-radius:50%;background:#639922"></div>
+      <span class="screen-title">Suivi — Mamadou Diallo</span>
+    </div>
+    <div class="screen-body">
+      <div class="plan-row"><span class="plan-key">Maquette</span><span class="plan-val">Type F3 · 85 M GNF</span></div>
+      <div class="plan-row"><span class="plan-key">Mensualité</span><span class="plan-val highlight">444 444 GNF / mois</span></div>
+      <div class="plan-row"><span class="plan-key">Cumul versé</span><span class="plan-val">26 666 640 GNF</span></div>
+      <div class="plan-row"><span class="plan-key">Échéances payées</span><span class="plan-val">60 / 180</span></div>
+      <div class="plan-row"><span class="plan-key">Taux régularité</span><span class="plan-val" style="color:#3B6D11">98,3% ✓</span></div>
+      <div class="plan-row" style="border:none"><span class="plan-key">Score priorité</span><span class="plan-val" style="color:#185FA5">92 / 100</span></div>
+
+      <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:10px;margin-bottom:4px">Historique des 24 derniers mois</div>
+      <div class="month-list">
+        <!-- 22 paid, 1 late (month 8), 1 current -->
+        <div class="month-dot m-paid">1</div><div class="month-dot m-paid">2</div><div class="month-dot m-paid">3</div><div class="month-dot m-paid">4</div>
+        <div class="month-dot m-paid">5</div><div class="month-dot m-paid">6</div><div class="month-dot m-paid">7</div><div class="month-dot m-late">8</div>
+        <div class="month-dot m-paid">9</div><div class="month-dot m-paid">10</div><div class="month-dot m-paid">11</div><div class="month-dot m-paid">12</div>
+        <div class="month-dot m-paid">13</div><div class="month-dot m-paid">14</div><div class="month-dot m-paid">15</div><div class="month-dot m-paid">16</div>
+        <div class="month-dot m-paid">17</div><div class="month-dot m-paid">18</div><div class="month-dot m-paid">19</div><div class="month-dot m-paid">20</div>
+        <div class="month-dot m-paid">21</div><div class="month-dot m-paid">22</div><div class="month-dot m-paid">23</div><div class="month-dot m-current">60</div>
+        <div style="display:flex;gap:6px;align-items:center;font-size:10px;color:var(--color-text-tertiary);width:100%;margin-top:4px">
+          <div class="month-dot m-paid" style="font-size:0"> </div> Payé
+          <div class="month-dot m-late" style="font-size:0"> </div> Retard
+          <div class="month-dot m-current" style="font-size:0"> </div> En cours
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

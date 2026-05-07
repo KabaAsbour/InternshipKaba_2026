@@ -1,0 +1,124 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin: 0 0 8px; }
+  .row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 12px; }
+  .rank-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 12px; }
+  .rank-num { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; }
+  .r1 { background: #FAEEDA; color: #854F0B; }
+  .r2 { background: #F1EFE8; color: #5F5E5A; }
+  .r3 { background: #FAEEDA; color: #854F0B; opacity: 0.6; }
+  .rn { background: var(--color-background-secondary); color: var(--color-text-tertiary); }
+  .rank-name { flex: 1; color: var(--color-text-primary); }
+  .score-wrap { display: flex; align-items: center; gap: 6px; }
+  .score-bar { height: 4px; width: 60px; border-radius: 2px; background: var(--color-border-tertiary); overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 2px; }
+  .score-num { font-size: 11px; font-weight: 500; color: var(--color-text-primary); min-width: 20px; text-align: right; }
+  .pill { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; flex-shrink: 0; }
+  .pill-green { background: #EAF3DE; color: #3B6D11; }
+  .pill-amber { background: #FAEEDA; color: #854F0B; }
+  .pill-red { background: #FCEBEB; color: #A32D2D; }
+  .pill-gray { background: #F1EFE8; color: #5F5E5A; }
+  .pill-blue { background: #E6F1FB; color: #185FA5; }
+  .pill-purple { background: #EEEDFE; color: #534AB7; }
+  .wf-step { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .wf-box { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 7px 10px; font-size: 11px; font-weight: 500; color: var(--color-text-primary); text-align: center; width: 100%; }
+  .wf-box.accent { background: var(--color-background-warning); border-color: var(--color-border-warning); color: var(--color-text-warning); }
+  .wf-arrow { font-size: 11px; color: var(--color-text-tertiary); }
+  .wf-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; width: 100%; }
+  .wf-accepted { background: #EAF3DE; border-color: #C0DD97; color: #3B6D11; }
+  .wf-rejected { background: #FCEBEB; border-color: #F7C1C1; color: #A32D2D; }
+  .case-icon { font-size: 18px; margin-bottom: 6px; }
+  .case-title { font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+  .case-option { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 6px 8px; font-size: 11px; color: var(--color-text-secondary); margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+  .dot-small { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+</style>
+
+<p class="section-label">Attribution scoring · Suspension workflow · Special cases</p>
+
+<div class="row">
+  <!-- Attribution ranking -->
+  <div class="card">
+    <div class="card-title">Classement attribution — Bâtiment A</div>
+    <div style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:8px">Score = versements (40%) + régularité (30%) + ancienneté (20%) + ordre (10%)</div>
+    <div class="rank-row">
+      <div class="rank-num r1">1</div>
+      <span class="rank-name">Mamadou Diallo</span>
+      <div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:92%;background:#639922"></div></div><span class="score-num">92</span></div>
+      <span class="pill pill-green">Attribué</span>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num r2">2</div>
+      <span class="rank-name">Fatoumata Bah</span>
+      <div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:88%;background:#639922"></div></div><span class="score-num">88</span></div>
+      <span class="pill pill-blue">En liste</span>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num rn">3</div>
+      <span class="rank-name">Ibrahima Kouyaté</span>
+      <div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:75%;background:#EF9F27"></div></div><span class="score-num">75</span></div>
+      <span class="pill pill-amber">Suspendu −5</span>
+    </div>
+    <div class="rank-row">
+      <div class="rank-num rn">4</div>
+      <span class="rank-name">Aissatou Camara</span>
+      <div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:71%;background:#EF9F27"></div></div><span class="score-num">71</span></div>
+      <span class="pill pill-amber">En liste</span>
+    </div>
+    <div class="rank-row" style="border:none">
+      <div class="rank-num rn">5</div>
+      <span class="rank-name">Sékou Traoré</span>
+      <div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:44%;background:#E24B4A"></div></div><span class="score-num">44</span></div>
+      <span class="pill pill-red">Retard</span>
+    </div>
+  </div>
+
+  <!-- Suspension workflow -->
+  <div class="card">
+    <div class="card-title">Workflow suspension</div>
+    <div class="wf-step">
+      <div class="wf-box">Demande employé (motif requis)</div>
+      <div class="wf-arrow">↓</div>
+      <div class="wf-box accent">Analyse — Dép. Rémunération</div>
+      <div class="wf-arrow">↓</div>
+      <div style="width:100%;text-align:center;font-size:10px;color:var(--color-text-tertiary);margin-bottom:4px">Décision</div>
+      <div class="wf-branch">
+        <div class="wf-box wf-accepted">Acceptée</div>
+        <div class="wf-box wf-rejected">Rejetée</div>
+      </div>
+      <div class="wf-arrow">↓</div>
+      <div class="wf-box">Décalage plan de remboursement</div>
+      <div class="wf-arrow">↓</div>
+      <div class="wf-box" style="background:var(--color-background-secondary);font-size:10px;color:var(--color-text-secondary)">Impact score priorité · Notification employé</div>
+    </div>
+  </div>
+</div>
+
+<!-- Special cases row -->
+<div class="row3">
+  <!-- Démission -->
+  <div class="card">
+    <div class="case-title">Démission</div>
+    <div class="case-option"><div class="dot-small" style="background:#639922"></div>Remboursement des montants versés</div>
+    <div class="case-option"><div class="dot-small" style="background:#378ADD"></div>Maintien du contrat</div>
+    <div style="font-size:10px;color:var(--color-text-tertiary);margin-top:6px">Selon conditions contractuelles · Validation DRH requise</div>
+  </div>
+  <!-- Décès -->
+  <div class="card">
+    <div class="case-title">Décès</div>
+    <div class="case-option"><div class="dot-small" style="background:#A32D2D"></div>Activation assurance automatique</div>
+    <div class="case-option"><div class="dot-small" style="background:#534AB7"></div>Prise en charge du solde restant</div>
+    <div class="case-option"><div class="dot-small" style="background:#1D9E75"></div>Transfert aux ayants droit</div>
+    <div style="font-size:10px;color:var(--color-text-tertiary);margin-top:6px">Dossier sinistre ouvert · Suivi assureur</div>
+  </div>
+  <!-- Retraite -->
+  <div class="card">
+    <div class="case-title">Retraite</div>
+    <div class="case-option"><div class="dot-small" style="background:#EF9F27"></div>Paiement anticipé du solde</div>
+    <div class="case-option"><div class="dot-small" style="background:#378ADD"></div>Maintien du remboursement</div>
+    <div style="font-size:10px;color:var(--color-text-tertiary);margin-top:6px">Plan adapté hors prélèvement salaire</div>
+  </div>
+</div>

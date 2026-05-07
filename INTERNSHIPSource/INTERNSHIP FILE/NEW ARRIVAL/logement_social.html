@@ -1,0 +1,149 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin: 0 0 10px; }
+  .nav-shell { display: flex; height: 520px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; background: var(--color-background-primary); }
+  .sidebar { width: 200px; border-right: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); display: flex; flex-direction: column; padding: 16px 0; flex-shrink: 0; }
+  .sidebar-logo { padding: 0 16px 16px; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 16px; }
+  .logo-badge { background: var(--color-background-info); color: var(--color-text-info); font-size: 11px; font-weight: 500; padding: 4px 8px; border-radius: var(--border-radius-md); display: inline-block; }
+  .logo-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-top: 6px; }
+  .nav-item { display: flex; align-items: center; gap: 8px; padding: 7px 16px; font-size: 13px; color: var(--color-text-secondary); cursor: pointer; border-radius: 0; transition: background 0.15s; }
+  .nav-item:hover { background: var(--color-background-primary); color: var(--color-text-primary); }
+  .nav-item.active { background: var(--color-background-primary); color: var(--color-text-primary); font-weight: 500; border-right: 2px solid var(--color-text-info); }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: 0.4; flex-shrink: 0; }
+  .nav-dot.blue { background: #378ADD; opacity: 1; }
+  .nav-dot.amber { background: #EF9F27; opacity: 1; }
+  .nav-dot.green { background: #639922; opacity: 1; }
+  .nav-dot.purple { background: #7F77DD; opacity: 1; }
+  .nav-dot.coral { background: #D85A30; opacity: 1; }
+  .nav-dot.teal { background: #1D9E75; opacity: 1; }
+  .nav-group-label { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); padding: 12px 16px 4px; }
+  .main-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .topbar { height: 44px; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; padding: 0 20px; gap: 12px; flex-shrink: 0; }
+  .topbar-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+  .topbar-spacer { flex: 1; }
+  .avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--color-background-info); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--color-text-info); flex-shrink: 0; }
+  .content { padding: 16px 20px; overflow-y: auto; flex: 1; }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 14px; }
+  .stat-label { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
+  .stat-value { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .stat-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 12px; }
+  .mini-list { display: flex; flex-direction: column; gap: 7px; }
+  .mini-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .mini-name { color: var(--color-text-primary); flex: 1; }
+  .mini-meta { color: var(--color-text-tertiary); }
+  .pill { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; flex-shrink: 0; }
+  .pill-green { background: #EAF3DE; color: #3B6D11; }
+  .pill-amber { background: #FAEEDA; color: #854F0B; }
+  .pill-red { background: #FCEBEB; color: #A32D2D; }
+  .pill-blue { background: #E6F1FB; color: #185FA5; }
+  .pill-gray { background: #F1EFE8; color: #5F5E5A; }
+  .score-bar { height: 4px; border-radius: 2px; background: var(--color-border-tertiary); overflow: hidden; flex: 1; }
+  .score-fill { height: 100%; border-radius: 2px; }
+  .tab-bar { display: flex; gap: 0; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 14px; }
+  .tab { font-size: 12px; padding: 6px 12px; color: var(--color-text-secondary); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -0.5px; }
+  .tab.active { color: var(--color-text-info); border-bottom-color: #378ADD; font-weight: 500; }
+</style>
+
+<div style="padding: 0 0 1rem;">
+  <p class="section-label">Application shell — dashboard view</p>
+  <div class="nav-shell">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-badge">DRH</div>
+        <div class="logo-title">Logements CBG</div>
+      </div>
+      <span class="nav-group-label">Principal</span>
+      <div class="nav-item active"><span class="nav-dot blue"></span>Tableau de bord</div>
+      <div class="nav-item"><span class="nav-dot purple"></span>Souscriptions</div>
+      <div class="nav-item"><span class="nav-dot green"></span>Paiements</div>
+      <div class="nav-item"><span class="nav-dot amber"></span>Attributions</div>
+      <span class="nav-group-label">Gestion</span>
+      <div class="nav-item"><span class="nav-dot coral"></span>Suspensions</div>
+      <div class="nav-item"><span class="nav-dot teal"></span>Assurances</div>
+      <div class="nav-item"><span class="nav-dot"></span>Prestataires</div>
+      <span class="nav-group-label">Reporting</span>
+      <div class="nav-item"><span class="nav-dot"></span>Rapports DRH</div>
+      <div class="nav-item"><span class="nav-dot"></span>Direction</div>
+    </div>
+    <!-- Main -->
+    <div class="main-area">
+      <div class="topbar">
+        <span class="topbar-title">Tableau de bord</span>
+        <span class="topbar-spacer"></span>
+        <span style="font-size:12px;color:var(--color-text-tertiary)">Département RH — CBG</span>
+        <div class="avatar">AK</div>
+      </div>
+      <div class="content">
+        <!-- Stats -->
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-label">Souscripteurs actifs</div><div class="stat-value">247</div><div class="stat-sub">+12 ce mois</div></div>
+          <div class="stat-card"><div class="stat-label">Collecté total (GNF)</div><div class="stat-value">4,2 Md</div><div class="stat-sub">Compte CBG</div></div>
+          <div class="stat-card"><div class="stat-label">Taux de régularité</div><div class="stat-value">96,3%</div><div class="stat-sub">Seuil: 95%</div></div>
+          <div class="stat-card"><div class="stat-label">Attributions en cours</div><div class="stat-value">18</div><div class="stat-sub">3 en attente</div></div>
+        </div>
+        <!-- Two columns -->
+        <div class="row">
+          <!-- Priority list -->
+          <div class="card">
+            <div class="card-title">Top souscripteurs — scoring</div>
+            <div class="tab-bar">
+              <span class="tab active">Priorité haute</span>
+              <span class="tab">En retard</span>
+            </div>
+            <div class="mini-list">
+              <div class="mini-row">
+                <span class="mini-name">Mamadou Diallo</span>
+                <div class="score-bar"><div class="score-fill" style="width:92%;background:#639922"></div></div>
+                <span class="mini-meta">92</span>
+                <span class="pill pill-green">Éligible</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-name">Fatoumata Bah</span>
+                <div class="score-bar"><div class="score-fill" style="width:88%;background:#639922"></div></div>
+                <span class="mini-meta">88</span>
+                <span class="pill pill-green">Éligible</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-name">Ibrahima Kouyaté</span>
+                <div class="score-bar"><div class="score-fill" style="width:75%;background:#EF9F27"></div></div>
+                <span class="mini-meta">75</span>
+                <span class="pill pill-amber">En cours</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-name">Aissatou Camara</span>
+                <div class="score-bar"><div class="score-fill" style="width:71%;background:#EF9F27"></div></div>
+                <span class="mini-meta">71</span>
+                <span class="pill pill-amber">En cours</span>
+              </div>
+              <div class="mini-row">
+                <span class="mini-name">Sékou Traoré</span>
+                <div class="score-bar"><div class="score-fill" style="width:44%;background:#E24B4A"></div></div>
+                <span class="mini-meta">44</span>
+                <span class="pill pill-red">Retard</span>
+              </div>
+            </div>
+          </div>
+          <!-- Recent activity -->
+          <div class="card">
+            <div class="card-title">Activité récente</div>
+            <div class="mini-list">
+              <div class="mini-row"><span class="pill pill-blue">Paie</span><span class="mini-name">Prélèvement juin — 247 employés</span><span class="mini-meta">Aujourd'hui</span></div>
+              <div class="mini-row"><span class="pill pill-green">Attribution</span><span class="mini-name">Logement B-04 — M. Diallo</span><span class="mini-meta">Hier</span></div>
+              <div class="mini-row"><span class="pill pill-amber">Suspension</span><span class="mini-name">Demande — I. Kouyaté</span><span class="mini-meta">2 j</span></div>
+              <div class="mini-row"><span class="pill pill-blue">Souscription</span><span class="mini-name">Nouvelle — M. Sylla (Grade B)</span><span class="mini-meta">3 j</span></div>
+              <div class="mini-row"><span class="pill pill-red">Alerte</span><span class="mini-name">Retard paiement — S. Traoré</span><span class="mini-meta">5 j</span></div>
+              <div class="mini-row"><span class="pill pill-gray">Assurance</span><span class="mini-name">Renouvellement — 12 contrats</span><span class="mini-meta">1 sem</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

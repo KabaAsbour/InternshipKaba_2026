@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Programme Logements Sociaux</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+}
+
+/* CENTER CONTAINER */
+.circle-container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin: 50px auto;
+}
+
+/* CENTER BLOCK */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* EACH NODE */
+.node {
+    position: absolute;
+    width: 130px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.node .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4A90E2;
+    color: white;
+    line-height: 40px;
+    margin: auto;
+    font-weight: bold;
+}
+
+.node .label {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* HOVER EFFECT */
+.node:hover .circle {
+    background: #27AE60;
+}
+
+/* POSITIONING USING ROTATION */
+</style>
+</head>
+
+<body>
+
+<div class="circle-container">
+
+    <div class="center">
+        <h3>🏠 PROGRAMME</h3>
+        <p>Logements Sociaux</p>
+        <small>DRH – Pilotage & Transparence</small>
+    </div>
+
+    <!-- NODES -->
+
+    <script>
+        const data = [
+            "RG-01 : Éligibilité",
+            "RG-02 : Formulaire de souscription",
+            "RG-03 : Correspondance grade / maquette",
+            "RG-04 : Dérogation par apport",
+            "RG-06 : Durée (180 mois)",
+            "RG-07 : Calcul mensualité",
+            "RG-08 : Prélèvement automatique",
+            "WF-02 : Paiement mensuel",
+            "RG-09 : Compte de collecte",
+            "RG-10 : Suivi des paiements",
+            "RG-11 : Régularité (≥95%)",
+            "RG-16 : Scoring automatique",
+            "RG-15 : Critères d’attribution",
+            "WF-04 : Attribution logement",
+            "WF-03 : Suspension",
+            "RG-20 : Démission",
+            "RG-21 : Décès",
+            "RG-22 : Retraite",
+            "RG-23 : Assurance obligatoire",
+            "RG-24 : Suivi assurance",
+            "RG-18 : Paiement prestataires"
+        ];
+
+        const container = document.querySelector('.circle-container');
+        const radius = 300;
+        const centerX = 350;
+        const centerY = 350;
+
+        data.forEach((text, i) => {
+            const angle = (i / data.length) * (2 * Math.PI);
+
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+
+            const node = document.createElement('div');
+            node.className = 'node';
+            node.style.left = x + 'px';
+            node.style.top = y + 'px';
+
+            node.innerHTML = `
+                <div class="circle">${i + 1}</div>
+                <div class="label">${text}</div>
+            `;
+
+            container.appendChild(node);
+        });
+    </script>
+
+</div>
+
+</body>
+</html>
